@@ -1,0 +1,37 @@
+# Version control
+.git/
+
+# Bundler configuration
+/.bundle/
+
+# All logfiles
+/log/*
+!/log/.keep
+
+# Temporary files & directories
+/tmp/*
+!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore IDE specific files (for example if you're using VSCode or JetBrains IDEs)
+.vscode/
+.idea/
+
+# Ignore the vendor directory where third-party code might be installed
+/vendor/
+
+# Node modules directory if you incorporate JavaScript in future
+/node_modules/
+
+# Files that might contain secrets
+.env
+
+# Ignore OS generated files
+.DS_Store
