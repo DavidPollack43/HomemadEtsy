@@ -39,6 +39,7 @@ class ApplicationController < ActionController::API
       session[:session_token] = nil # remove token from browser cookies
       @current_user = nil # remove instance variable
     end
+
   
     private
     def attach_authenticity_token
