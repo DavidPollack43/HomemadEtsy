@@ -4,14 +4,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root to: "static_pages#root"
+  post 'api/test', to: 'application#test'
 
   namespace :api, defaults: { format: :json } do
       # User routes
       resources :users, only: [:create] # Sign up a new user
 
       # Session routes
-      resource :session, only: [:create, :destroy] # Log in and Log out
+      resource :session, only: [:create, :destroy, :show] # Log in and Log out
 
       # Product routes
       resources :products, except: [:new, :edit] do 
