@@ -1925,3 +1925,45 @@ Processing by ApplicationController#test as */*
 Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 297)
 
 
+Started GET "/" for ::1 at 2023-10-10 15:39:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 527)
+Completed 200 OK in 706ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 963040)
+
+
+Started POST "/api/test" for ::1 at 2023-10-10 15:40:24 -0700
+Processing by ApplicationController#test as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 900)
+
+
+Started GET "/api/session" for ::1 at 2023-10-10 15:40:41 -0700
+Processing by Api::SessionsController#show as JSON
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 500)
+
+
+Started GET "/" for ::1 at 2023-10-10 15:41:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 527)
+Completed 200 OK in 895ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 963024)
+
+
+Started GET "/api/session" for ::1 at 2023-10-10 15:41:26 -0700
+Processing by Api::SessionsController#show as JSON
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 0.5ms | Allocations: 283)
+
+NameError - undefined local variable or method `lol' for #<Api::SessionsController:0x000000000055a0>
+
+    lol
+    ^^^
+Did you mean?  load:
+	app/controllers/api/sessions_controller.rb:4:in `show'
+
+Completed 500 Internal Server Error in 6ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 4985)
+
+
