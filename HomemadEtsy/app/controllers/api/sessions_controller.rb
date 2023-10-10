@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
   def show
     @user = current_user
     if @user
-      render json: @user
+      render 'api/users/show'
     else
       render json: nil
     end
@@ -13,7 +13,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:session][:credential], params[:session][:password])
     if @user
       login!(@user)
-      render json: @user
+      render 'api/users/show'
     else
       render json: {errors: ['Invalid credentials']}, status: 422
     end
