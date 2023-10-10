@@ -44,20 +44,6 @@ class ApplicationController < ActionController::API
       @current_user = nil # remove instance variable
     end
 
-    def test
-      if params.has_key?(:login)
-        login!(User.first)
-      elsif params.has_key?(:logout)
-        logout!
-      end
-    
-      if current_user
-        render json: { user: current_user.slice('id', 'username', 'session_token') }
-      else
-        render json: ['No current user']
-      end
-    end
-
   
     private
     def attach_authenticity_token
@@ -86,6 +72,6 @@ class ApplicationController < ActionController::API
         logger.error "\n#{@message}:\n\t#{@stack.join("\n\t")}\n"
       end
     end
-    
+
   end
   
