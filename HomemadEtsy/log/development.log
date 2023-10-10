@@ -1967,3 +1967,25 @@ Did you mean?  load:
 Completed 500 Internal Server Error in 6ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 4985)
 
 
+Started GET "/" for ::1 at 2023-10-10 16:23:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 525)
+Completed 200 OK in 826ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 963459)
+
+
+Started GET "/" for ::1 at 2023-10-10 16:23:56 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 278)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1147)
+
+
+Started GET "/" for ::1 at 2023-10-10 16:23:57 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/davidpollack/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 219)
+
+
