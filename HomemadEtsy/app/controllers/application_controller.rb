@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::API
-    # include ActionController::RequestForgeryProtection
+    include ActionController::RequestForgeryProtection
     
-    # protect_from_forgery with: :exception # csrf
+    protect_from_forgery with: :exception # csrf
   
-    before_action :snake_case_params #, :attach_authenticity_token
+    before_action :snake_case_params, :attach_authenticity_token
   
   
     def current_user
@@ -56,10 +56,10 @@ class ApplicationController < ActionController::API
 
   
     private
-    # def attach_authenticity_token
-    #   # grab this in restoreSession
-    #   headers['X-CSRF-Token'] = masked_authenticity_token(session)
-    # end
+    def attach_authenticity_token
+      # grab this in restoreSession
+      headers['X-CSRF-Token'] = masked_authenticity_token(session)
+    end
   
     # transform camelcase requests to snakecase: user: {userId: 2} -> user: {user_id: 2}
     def snake_case_params
