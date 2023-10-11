@@ -39,8 +39,11 @@ import * as sessionActions from './store/session.js';
     );
   }
 
-if (sessionStorage.getItem("X-CSRF-Token") === null || sessionStorage.getItem("currentUser") === null) {
-  store.dispatch(sessionActions.restoreSession()).then(renderApplication);
-} else {
-  renderApplication();
-}
+  if (
+    sessionStorage.getItem("currentUser") === null ||
+    sessionStorage.getItem("X-CSRF-Token") === null 
+  ) {
+    store.dispatch(sessionActions.restoreSession()).then(renderApplication);
+  } else {
+    renderApplication();
+  }
