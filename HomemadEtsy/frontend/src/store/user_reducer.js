@@ -1,4 +1,4 @@
-import { csrfFetch } from "./csrf";
+import csrfFetch from "./csrf.js";
 // ACTION TYPES
 export const RECEIVE_USER = 'users/RECEIVE_USER';
 export const REMOVE_USER = 'users/REMOVE_USER';
