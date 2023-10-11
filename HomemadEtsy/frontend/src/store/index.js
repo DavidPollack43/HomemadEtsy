@@ -5,7 +5,6 @@ import userReducer from './user_reducer';
 import sessionReducer from './session';
 
 const rootReducer = combineReducers({
-  modal: modalReducer,
   session: sessionReducer
 })
 
