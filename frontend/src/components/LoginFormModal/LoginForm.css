@@ -1,0 +1,17 @@
+.loginButton{
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    position: absolute;
+    right: 15%;
+    border: none;
+    top: 1.9%;
+    cursor: pointer;
+    color: #999999;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    font-style: normal;
+    font-weight: normal;
+}

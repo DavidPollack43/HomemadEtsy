@@ -19,3 +19,21 @@ i{
     position: absolute;
 }
 
+.SignUpButton{
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    position: absolute;
+    right: 10%;
+    border: none;
+    top: 2%;
+    cursor: pointer;
+    color: #999999;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    font-style: normal;
+    font-weight: normal;
+}
+  
