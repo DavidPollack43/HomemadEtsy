@@ -29,11 +29,17 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center" }}>
+        <h2>Sign in</h2>
+        <button className="registerButton">Register</button>
+    </div>
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
+      <br/>
       <label>
         Username or Email
+        <br />
         <input
           type="text"
           value={credential}
@@ -42,7 +48,9 @@ function LoginForm() {
         />
       </label>
       <label>
+        <br/>
         Password
+        <br/>
         <input
           type="password"
           value={password}
@@ -50,7 +58,8 @@ function LoginForm() {
           required
         />
       </label>
-      <button type="submit">Log In</button>
+      <br/>
+      <button className="submitButton" type="submit">Sign in</button>
     </form>
   );
 }

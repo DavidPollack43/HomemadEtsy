@@ -15,3 +15,77 @@
     font-style: normal;
     font-weight: normal;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #191919;
+    color: #fff; 
+  }
+
+
+label {
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: smaller;
+  }
+  
+  input {
+    margin-top: 5px;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #999999;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    color: red; /* Error messages in red */
+  }
+
+  .registerButton {
+    font-size: 13px;
+    line-height: 1.4;
+    min-height: 36px;
+    min-width: 36px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: transparent;
+    color: rgb(191, 191, 191);
+    border-radius: 25px;
+    border: 0.1px solid #999999;
+    cursor: pointer;
+  }
+  
+  .registerButton:hover {
+    box-shadow: 0px 0px 8px rgb(238, 232, 232);
+  }
+
+  h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: rgb(191, 191, 191);
+  }
