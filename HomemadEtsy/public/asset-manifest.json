@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.50086c3c.css",
+    "main.js": "/static/js/main.10411b29.js",
+    "static/media/homemadEtsy.png": "/static/media/homemadEtsy.5a95f024a4aa4594d0a8.png",
+    "index.html": "/index.html",
+    "main.50086c3c.css.map": "/static/css/main.50086c3c.css.map",
+    "main.10411b29.js.map": "/static/js/main.10411b29.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50086c3c.css",
+    "static/js/main.10411b29.js"
+  ]
+}

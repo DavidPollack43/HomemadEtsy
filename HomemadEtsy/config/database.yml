@@ -84,3 +84,4 @@ production:
   database: HomemadEtsy_production
   username: HomemadEtsy
   password: <%= ENV["HOMEMADETSY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
