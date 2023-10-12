@@ -6,6 +6,16 @@ i{
     background: transparent;
 }
 
-button{
+.profileButton{
     background-color: transparent;
+    top: 2%;
+    right: 5%;
+    position: absolute;
 }
+
+.profile-dropdown{
+    top: 3%;
+    right: 5%;
+    position: absolute;
+}
+

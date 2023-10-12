@@ -33,7 +33,7 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
+      <button className="profileButton" onClick={openMenu}>
         <i className="fa-solid fa-user" style={{color: "#fdb73f"}} />
       </button>
       {showMenu && (
