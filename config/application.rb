@@ -1,4 +1,4 @@
-require_relative "boot"
+jrequire_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
