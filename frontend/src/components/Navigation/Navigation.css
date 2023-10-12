@@ -1,3 +1,11 @@
 li{
     list-style-type: none;
 }
+
+i{
+    background: transparent;
+}
+
+button{
+    background-color: transparent;
+}
