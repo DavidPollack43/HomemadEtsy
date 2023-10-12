@@ -21,4 +21,6 @@ Rails.application.routes.draw do
         # This gives you all CRUD routes for orders except new and edit
       end
   end
+
+  get '*path', to: "static_pages#frontend_index"
 end
