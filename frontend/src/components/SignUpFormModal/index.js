@@ -9,7 +9,6 @@ function SignupFormModal() {
         <>
         {showModal && (
             <Modal onClose={() => setShowModal(false)}>
-                {console.log("inside the modal ")}
                 <SignupFormPage />
             </Modal>
         )}
