@@ -17,6 +17,8 @@ class User < ApplicationRecord
   validates :session_token, presence: true, uniqueness: true
   validates :password, length: {in: 6..255}, allow_nil: true
 
+  has_many :products, dependent: :destroy
+
   has_secure_password # this handles password getter, setter, and is_password? for us
 
   before_validation :ensure_session_token
