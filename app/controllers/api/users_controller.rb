@@ -4,7 +4,6 @@ class Api::UsersController < ApplicationController
 
 
   def create
-    puts(params.inspect)
     @user = User.new(user_params)
     if @user.save
       login!(@user)
