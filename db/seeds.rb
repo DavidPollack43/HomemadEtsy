@@ -20,7 +20,7 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('products')
 
     puts "Destorying Categories ..."
-    Categories.destroy_all
+    Category.destroy_all
 
     puts "Resetting primary keys for categories..."
     ApplicationRecord.connection.reset_pk_sequence!("categories")
@@ -54,6 +54,8 @@ ApplicationRecord.transaction do
       
     puts "#{Category.count} categories created!"
 
+    puts "Seeding products ..."
+
     products = [
         # Jewlery & Accessories
         { title: "Silver Diamond Ring", description: "A stunning silver ring with a brilliant diamond centerpiece.", price: 150.00, stock_quantity: 5, user_id: 1, category: Category.find_by(name: "Jewlery & Accessories") },
@@ -67,7 +69,7 @@ ApplicationRecord.transaction do
         { title: "Locket Necklace", description: "Vintage-style locket to keep your memories close to your heart.", price: 55.00, stock_quantity: 15, user_id: 8, category: Category.find_by(name: "Jewlery & Accessories") },
         { title: "Cufflinks", description: "Elegant cufflinks for a refined look.", price: 45.00, stock_quantity: 18, user_id: 9, category: Category.find_by(name: "Jewlery & Accessories") },
         { title: "Beaded Anklet", description: "Chic anklet adorned with colorful beads.", price: 25.00, stock_quantity: 25, user_id: 10, category: Category.find_by(name: "Jewlery & Accessories") },
-        { title: "Turquoise Ring", description: "Handcrafted ring featuring a turquoise gemstone.", price: 65.00, stock_quantity: 10, user_id: 11, category: Category.find_by(name: "Jewlery & Accessories") }
+        { title: "Turquoise Ring", description: "Handcrafted ring featuring a turquoise gemstone.", price: 65.00, stock_quantity: 10, user_id: 11, category: Category.find_by(name: "Jewlery & Accessories") },
     
         # Clothing & Shoes
         { title: "Summer Dress", description: "A light and colorful dress perfect for summer outings.", price: 40.00, stock_quantity: 20, user_id: 12, category: Category.find_by(name: "Clothing & Shoes") },
@@ -81,7 +83,7 @@ ApplicationRecord.transaction do
         { title: "Linen Trousers", description: "Breathable and stylish trousers perfect for the summer season.", price: 45.00, stock_quantity: 15, user_id: 5, category: Category.find_by(name: "Clothing & Shoes") },
         { title: "Cashmere Shawl", description: "Soft and luxurious shawl made of 100% cashmere.", price: 85.00, stock_quantity: 10, user_id: 6, category: Category.find_by(name: "Clothing & Shoes") },
         { title: "Men's Suit", description: "A well-tailored suit for formal occasions.", price: 200.00, stock_quantity: 8, user_id: 7, category: Category.find_by(name: "Clothing & Shoes") },
-        { title: "Pleated Skirt", description: "A trendy pleated skirt in a vibrant shade.", price: 40.00, stock_quantity: 20, user_id: 8, category: Category.find_by(name: "Clothing & Shoes") }
+        { title: "Pleated Skirt", description: "A trendy pleated skirt in a vibrant shade.", price: 40.00, stock_quantity: 20, user_id: 8, category: Category.find_by(name: "Clothing & Shoes") },
     
         # Home & Living
         { title: "Ceramic Vase", description: "Handcrafted ceramic vase with a rustic look.", price: 60.00, stock_quantity: 10, user_id: 9, category: Category.find_by(name: "Home & Living") },
@@ -95,7 +97,7 @@ ApplicationRecord.transaction do
         { title: "Framed Mirror", description: "Oval shaped mirror with a gold frame.", price: 80.00, stock_quantity: 10, user_id: 2, category: Category.find_by(name: "Home & Living") },
         { title: "Kitchen Island", description: "Wooden kitchen island with storage below.", price: 250.00, stock_quantity: 4, user_id: 3, category: Category.find_by(name: "Home & Living") },
         { title: "Bathroom Towel Set", description: "Premium cotton towel set, includes two bath towels.", price: 40.00, stock_quantity: 30, user_id: 4, category: Category.find_by(name: "Home & Living") },
-        { title: "Candle Holder Set", description: "Metallic candle holders, set of three.", price: 30.00, stock_quantity: 25, user_id: 5, category: Category.find_by(name: "Home & Living") }
+        { title: "Candle Holder Set", description: "Metallic candle holders, set of three.", price: 30.00, stock_quantity: 25, user_id: 5, category: Category.find_by(name: "Home & Living") },
     
         # Wedding & Party
         { title: "Wedding Invitation Set", description: "Elegant wedding invitations with a floral theme.", price: 2.50, stock_quantity: 100, user_id: 6, category: Category.find_by(name: "Wedding & Party") },
@@ -109,7 +111,7 @@ ApplicationRecord.transaction do
         { title: "Wedding Photo Album", description: "Beautiful album to store your precious memories.", price: 50.00, stock_quantity: 20, user_id: 14, category: Category.find_by(name: "Wedding & Party") },
         { title: "Confetti Packs", description: "Pack of 100 colorful confetti pouches.", price: 10.00, stock_quantity: 50, user_id: 15, category: Category.find_by(name: "Wedding & Party") },
         { title: "Groomsmen Ties", description: "Set of 5 matching ties for groomsmen.", price: 80.00, stock_quantity: 10, user_id: 1, category: Category.find_by(name: "Wedding & Party") },
-        { title: "Ring Bearer Pillow", description: "Soft pillow with lace for ring bearer.", price: 20.00, stock_quantity: 25, user_id: 2, category: Category.find_by(name: "Wedding & Party") }
+        { title: "Ring Bearer Pillow", description: "Soft pillow with lace for ring bearer.", price: 20.00, stock_quantity: 25, user_id: 2, category: Category.find_by(name: "Wedding & Party") },
     
         # Craft Supplies
         { title: "Knitting Kit", description: "All the essentials for beginners to start knitting.", price: 20.00, stock_quantity: 30, user_id: 1, category: Category.find_by(name: "Craft Supplies") },
@@ -126,6 +128,12 @@ ApplicationRecord.transaction do
         { title: "DIY Candle Making Kit", description: "Everything you need to create your own scented candles.", price: 35.00, stock_quantity: 10, user_id: 10, category: Category.find_by(name: "Craft Supplies") }
 
     ]
+
+    products.each do |product|
+        Product.create!(product)
+    end
+
+    puts "#{products.length} products created!"
 
 
     puts "Done!"
