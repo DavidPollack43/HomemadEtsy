@@ -19,7 +19,6 @@ function Navigation(){
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup" className="SignUpButton">Sign Up</NavLink>
       </>
     );
   }
