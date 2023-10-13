@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 function SignupFormModal() {
     const [showModal, setShowModal] = useState(true);
+    
     return (
         <>
         {showModal && (
@@ -13,7 +14,7 @@ function SignupFormModal() {
             </Modal>
         )}
         </>
-    );
+    )
 }
 
 export default SignupFormModal;
