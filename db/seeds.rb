@@ -96,7 +96,6 @@ ApplicationRecord.transaction do
         { title: "Kitchen Island", description: "Wooden kitchen island with storage below.", price: 250.00, stock_quantity: 4, user_id: 3, category: Category.find_by(name: "Home & Living") },
         { title: "Bathroom Towel Set", description: "Premium cotton towel set, includes two bath towels.", price: 40.00, stock_quantity: 30, user_id: 4, category: Category.find_by(name: "Home & Living") },
         { title: "Candle Holder Set", description: "Metallic candle holders, set of three.", price: 30.00, stock_quantity: 25, user_id: 5, category: Category.find_by(name: "Home & Living") }
-        # ... add more for Home & Living
     
         # Wedding & Party
         { title: "Wedding Invitation Set", description: "Elegant wedding invitations with a floral theme.", price: 2.50, stock_quantity: 100, user_id: 6, category: Category.find_by(name: "Wedding & Party") },
@@ -111,12 +110,21 @@ ApplicationRecord.transaction do
         { title: "Confetti Packs", description: "Pack of 100 colorful confetti pouches.", price: 10.00, stock_quantity: 50, user_id: 15, category: Category.find_by(name: "Wedding & Party") },
         { title: "Groomsmen Ties", description: "Set of 5 matching ties for groomsmen.", price: 80.00, stock_quantity: 10, user_id: 1, category: Category.find_by(name: "Wedding & Party") },
         { title: "Ring Bearer Pillow", description: "Soft pillow with lace for ring bearer.", price: 20.00, stock_quantity: 25, user_id: 2, category: Category.find_by(name: "Wedding & Party") }
-        # ... add more for Wedding & Party
     
         # Craft Supplies
         { title: "Knitting Kit", description: "All the essentials for beginners to start knitting.", price: 20.00, stock_quantity: 30, user_id: 1, category: Category.find_by(name: "Craft Supplies") },
         { title: "Watercolor Paint Set", description: "A set of vibrant watercolors for artists of all levels.", price: 25.00, stock_quantity: 20, user_id: 1, category: Category.find_by(name: "Craft Supplies") },
         { title: "Bead Collection", description: "A variety of beads for making jewelry and other crafts.", price: 15.00, stock_quantity: 40, user_id: 1, category: Category.find_by(name: "Craft Supplies") },
+        { title: "Origami Paper Pack", description: "Assorted colors of high-quality origami paper.", price: 10.00, stock_quantity: 50, user_id: 2, category: Category.find_by(name: "Craft Supplies") },
+        { title: "Crochet Hooks Set", description: "A set of various sizes of crochet hooks.", price: 15.00, stock_quantity: 20, user_id: 3, category: Category.find_by(name: "Craft Supplies") },
+        { title: "Sewing Thread Collection", description: "Multiple spools of thread in different colors.", price: 18.00, stock_quantity: 30, user_id: 4, category: Category.find_by(name: "Craft Supplies") },
+        { title: "Stencils Kit", description: "Various designs for all your crafting needs.", price: 12.00, stock_quantity: 40, user_id: 5, category: Category.find_by(name: "Craft Supplies") },
+        { title: "Scrapbooking Supplies", description: "Assorted items for your scrapbooking projects.", price: 30.00, stock_quantity: 15, user_id: 6, category: Category.find_by(name: "Craft Supplies") },
+        { title: "Clay Sculpting Tools", description: "Professional tools for clay modeling and sculpting.", price: 20.00, stock_quantity: 25, user_id: 7, category: Category.find_by(name: "Craft Supplies") },
+        { title: "Acrylic Paint Tubes", description: "Set of 12 acrylic paint tubes for painting.", price: 28.00, stock_quantity: 20, user_id: 8, category: Category.find_by(name: "Craft Supplies") },
+        { title: "Craft Glue", description: "Strong adhesive for various craft projects.", price: 5.00, stock_quantity: 60, user_id: 9, category: Category.find_by(name: "Craft Supplies") },
+        { title: "DIY Candle Making Kit", description: "Everything you need to create your own scented candles.", price: 35.00, stock_quantity: 10, user_id: 10, category: Category.find_by(name: "Craft Supplies") }
+
     ]
 
 
