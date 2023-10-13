@@ -15,7 +15,7 @@
     font-style: normal;
     font-weight: normal;
 }
-form {
+/* form {
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -23,7 +23,7 @@ form {
     border-radius: 10px;
     background-color: #191919;
     color: #fff; 
-  }
+  } */
 
 
 label {
@@ -39,7 +39,7 @@ label {
     border-radius: 5px;
   }
   
-  button[type="submit"] {
+  .submitButton {
     padding: 10px 20px;
     margin-top: 10px;
     background-color: #333333;
@@ -50,9 +50,10 @@ label {
     transition: background-color 0.3s;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: medium;
+    width: 100%;
   }
   
-  button[type="submit"]:hover {
+  .submitButton:hover {
     background-color: #999999;
   }
   
@@ -88,4 +89,14 @@ label {
     font-size: 20px;
     line-height: 28px;
     color: rgb(191, 191, 191);
+  }
+
+  .modalContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #191919;
+    color: #fff; 
   }

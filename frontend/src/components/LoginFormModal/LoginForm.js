@@ -4,12 +4,13 @@ import { useDispatch } from "react-redux";
 import "./LoginForm.css";
 import SignupFormModal from "../SignUpFormModal";
 
-function LoginForm() {
+function LoginForm({showModal, setShowModal}) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const [showSignup, setShowSignup] = useState(false);
+  // const [showSignup, setShowSignup] = useState(false);
+  // const [showLogin, setShowLogin] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,15 +33,23 @@ function LoginForm() {
   const handleClick = (e) =>{
     e.preventDefault();
     e.stopPropagation();
-    setShowSignup(true);
+    // setShowSignup(true);
+    setShowModal("signup")
+  }
+
+  const handleDemoClick = (e) =>{
+    e.preventDefault();
+    const demo = {
+      credential: 'Demo-lition', 
+      password: 'password'
+    }
+    dispatch(sessionActions.login(demo))
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      {showSignup ? (
-        <SignupFormModal />
-      ) : (
-        <>
+      <div className="modalContainer">
+      {
+      <form onSubmit={handleSubmit}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center" }}>
             <h2>Sign in</h2>
             <button onClick={handleClick} className="registerButton">Register</button>
@@ -79,9 +88,10 @@ function LoginForm() {
           <br/>
 
           <button className="submitButton" type="submit">Sign in</button>
-        </>
-      )}
-    </form>
+        </form>
+      }
+      <button className="submitButton" onClick={handleDemoClick}>Demo User</button>
+      </div>
   );
 }
 

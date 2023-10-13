@@ -39,7 +39,7 @@ function SignupFormPage() {
   };
 
   return (
-    <>
+    <div className='modalContainer'>
         <form onSubmit={handleSubmit}>
             <h1>Create your Account</h1>
             <br/>
@@ -91,9 +91,9 @@ function SignupFormPage() {
                 required
                 />
             </label>
-            <button type="submit">Register</button>
+            <button type="submit" className='submitButton'>Register</button>
         </form>
-    </>
+    </div>
   );
 }
 
