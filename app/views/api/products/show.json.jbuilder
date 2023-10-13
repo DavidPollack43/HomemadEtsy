@@ -1,5 +1,5 @@
 json.product do 
-    json.extract! @product, :title, :description, :price, :stock_quantity
+    json.extract! @product, :id, :title, :description, :price, :stock_quantity
     json.user do 
         json.id @product.user.id
         json.username @product.user.username
