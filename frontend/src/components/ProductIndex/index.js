@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts, getProducts } from "../../store/products";
+import { Link } from 'react-router-dom'
 
 export const ProductIndex = (props) => {
     const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export const ProductIndex = (props) => {
                     <p>Stock Quantity: {product.stockQuantity}</p>
                     <p>Category: {product.category.name}</p>
                     <p>Seller: {product.user.username}</p>
+                    {/* <Link to={`/products/${product.id}`}>Product Show</Link> */}
                 </div>
             ))}
         </div>
