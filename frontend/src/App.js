@@ -8,6 +8,9 @@ function App() {
     <>
       <Navigation />
       <ProductIndex />
+      <Switch>
+        <Route exact path = "/" component={ProductIndex}/>
+      </Switch>
     </>
   );
 }

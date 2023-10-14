@@ -12,10 +12,19 @@ export const ProductIndex = (props) => {
     }, [])
 
     return(
-        <>
-            <h1>Hello from Product Index!</h1>
-        </>
-    )
+    <div className="products-container">
+            {products.map(product => (
+                <div key={product.id} className="product">
+                    <h2>{product.title}</h2>
+                    <p>Description: {product.description}</p>
+                    <p>Price: ${product.price}</p>
+                    <p>Stock Quantity: {product.stockQuantity}</p>
+                    <p>Category: {product.category.name}</p>
+                    <p>Seller: {product.user.username}</p>
+                </div>
+            ))}
+        </div>
+    );
 }
 
 export default ProductIndex;
