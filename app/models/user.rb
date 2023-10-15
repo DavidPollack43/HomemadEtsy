@@ -19,6 +19,8 @@ class User < ApplicationRecord
 
   has_many :products, dependent: :destroy
 
+  has_many :cart_items, dependent: :destroy
+
   has_secure_password # this handles password getter, setter, and is_password? for us
 
   before_validation :ensure_session_token
