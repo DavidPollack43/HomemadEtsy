@@ -11,4 +11,11 @@
 #  updated_at                :datetime         not null
 #
 class OrderItem < ApplicationRecord
+    validates :order, :product, :quantity, :price_at_time_of_purchase, presence: true
+    validates :price_at_time_of_purchase, numericality: {greater_than_or_equal_to: 0}
+    validates :quantity, numericality: {greater_than_or_equal_to: 0}
+
+    belongs_to :order
+    belongs_to :product
+
 end
