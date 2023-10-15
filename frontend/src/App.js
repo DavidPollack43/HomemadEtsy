@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <Navigation />
-      <ProductIndex />
       <Switch>
         <Route exact path = "/" component={ProductIndex}/>
         <Route exact path = "/products/:productId" component={ProductShow}/>
