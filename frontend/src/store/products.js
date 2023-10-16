@@ -22,12 +22,9 @@ export const getProducts = (state) => state.products ? Object.values(state.produ
 export const getProduct = (productId) => (state) => state.products ? state.products[productId] : null;
 
 export const fetchProducts = () => async (dispatch) => {
-    console.log("About to do res")
     const res = await fetch("/api/products");
-    console.log("Did res")
     if(res.ok){
         const data = await res.json();
-        console.log(data)
         dispatch(receiveProducts(data));
     }else{
         const errorMessage = await res.json();
