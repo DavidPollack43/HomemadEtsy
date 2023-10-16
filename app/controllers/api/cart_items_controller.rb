@@ -1,7 +1,6 @@
 class Api::CartItemsController < ApplicationController
     def index
-        @cart_items = current_user.cart_items
-        # .includes(product: :user)
+        @cart_items = current_user.cart_items.includes(product: :user)
     end
 
     def create
@@ -16,7 +15,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def show 
-        @cart_item = current_user.cart_item.find_by(id: params[:id])
+        @cart_item = current_user.cart_item.includes(product: :user).find_by(id: params[:id])
         if @cart_item
             render :show
         else
