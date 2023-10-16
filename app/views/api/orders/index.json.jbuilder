@@ -1,6 +1,6 @@
 @orders.each do |order|
     json.set! order.id do
-        json.extract! :total_price, :status
+        json.extract! order, :total_price, :status
         json.order_items order.order_items do |item|
             json.set! item.id do 
                 json.title = item.product.title
