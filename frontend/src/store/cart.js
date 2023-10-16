@@ -24,6 +24,26 @@ export const fetchCart = () => async (dispatch) => {
     }
 }
 
+export const addToCart = (productId, quantity) => async(dispatch) => {
+    const res = await csrfFetch("/api/cart_items", {
+        method: "POST",
+        headers: {
+            "Content_Type": "application/json"
+        },
+        body: JSON.stringify({product_id: productId, quantity: quantity})
+    })
+
+    if(res.ok){
+        const data = await res.json();
+        dispatch(receiveCart(data));
+        return true;
+    }else{
+        const errorMessage = await res.json();
+        console.error("Failed to add to cart", errorMessage.message || "Unknown Error");
+        return false;
+    }
+}
+
 export const cartReducer = (state = {}, action) => {
     const nextState = Object.assign({}, state);
 
