@@ -21,7 +21,7 @@ class Order < ApplicationRecord
     has_many :order_items, dependent: :destroy
 
     def compute_total_price
-            calculated_total = order_items.sum{ |item| item.price_at_time_of_purchase * item.quantity }
-            self.total_price = calculated_total.round(2)
+        calculated_total = order_items.sum{ |item| item.price_at_time_of_purchase * item.quantity }
+        self.total_price = calculated_total.round(2)
     end
 end

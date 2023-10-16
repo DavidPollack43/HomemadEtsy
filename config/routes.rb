@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       end
 
       # Order routes
-      resources :orders, except: [:new, :edit] do
+      resources :orders, except: [:new, :edit, :update] do
         # This gives you all CRUD routes for orders except new and edit
       end
   end
