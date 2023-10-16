@@ -31,6 +31,8 @@ export const Cart = (props) => {
         dispatch(updateToCart(itemId, newQuantity));
     }
 
+    const totalPrice = cart.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
+
     return(
         <>
             {cart.map(item => (
@@ -40,6 +42,7 @@ export const Cart = (props) => {
                     <p>{item.product.description}</p>
                     <p>{item.product.price}</p>
                     <p>{item.quantity}</p>
+                    <p>Total Price of Item: {item.product.price * item.quantity}</p>
                     <select value={quantityForCart[item.id] || ""} onChange={(e) => setQuantity(e, item.id)}>
                         {[...Array(item.product.stockQuantity)].map((_, idx) => (
                             <option key={idx} value={idx+1}>{idx + 1}</option> // Added return here.
@@ -47,6 +50,7 @@ export const Cart = (props) => {
                     </select>
                 </div>
             ))}
+            <h2>Total Price = {totalPrice}</h2>
         </>
     )
 }
