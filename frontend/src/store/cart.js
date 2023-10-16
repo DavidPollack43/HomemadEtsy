@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 export const RECEIVE_CART = 'cart/RECEIVE_CART';
 export const RECEIVE_CART_ITEM = "cart/RECEIVE_CART_ITEM"
+export const REMOVE_CART_ITEM = "cart/REMOVE_CART_ITEM"
 
 export const receiveCart = (payload) => {
     return {
@@ -10,13 +11,16 @@ export const receiveCart = (payload) => {
     }
 }
 
-//Action to receiveCartItem (indvidual item)
-
-//TODO
-
 export const receiveCartItem = (payload) => {
     return {
         type: RECEIVE_CART_ITEM,
+        payload
+    }
+}
+
+export const removeCartItem = (payload) => {
+    return {
+        type: REMOVE_CART_ITEM,
         payload
     }
 }
@@ -78,6 +82,21 @@ export const updateToCart = (cartItemId, quantity) => async(dispatch) => {
     }
 }
 
+export const deleteCartItem = (cartItemId) => async(dispatch) => {
+    const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    if(res.ok){
+        dispatch(removeCartItem(cartItemId));
+    }else{
+        const errorMessage = await res.json();
+        console.error("Failed to delete cart item", errorMessage.message || "Unknown Error");
+    }
+}
+
 //Change reducer accordingly
 
 //TODO
@@ -89,6 +108,9 @@ export const cartReducer = (state = {}, action) => {
             return{...state, ...action.payload}
         case RECEIVE_CART_ITEM:
             nextState[action.payload.id] = action.payload;
+            return nextState;
+        case REMOVE_CART_ITEM:
+            delete nextState[action.payload]
             return nextState;
         default:
             return state;
