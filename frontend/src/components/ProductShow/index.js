@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct, getProduct } from '../../store/products';
-import { addToCart } from '../../store/cart';
+import { addToCart, getCartItemByProductId, updateToCart } from '../../store/cart';
 import { useState } from 'react';
 
 export const ProductShow = () =>{
@@ -10,6 +10,7 @@ export const ProductShow = () =>{
     const {productId} = useParams();
     const product = useSelector(getProduct(productId));
     const [quantityForCart, setQuantityForCart] = useState(1)
+    const existingCartItem = useSelector(state => getCartItemByProductId(state, productId));
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
@@ -17,8 +18,13 @@ export const ProductShow = () =>{
 
     const handleClick = (e) => {
         e.preventDefault();
-        
-        dispatch(addToCart(productId, quantityForCart))
+
+        if (existingCartItem){
+            const newQuantity = quantityForCart
+            dispatch(updateToCart(existingCartItem.id, newQuantity))
+        }else{
+            dispatch(addToCart(productId, quantityForCart))
+        }
     }
 
     const setQuantity = (e) => {

@@ -26,7 +26,7 @@ class Api::CartItemsController < ApplicationController
     def update
         @cart_item = current_user.cart_items.find_by(id: params[:id])
         if @cart_item.update(cart_item_params)
-            render :index
+            render :show
         else
             render json: @cart_item.errors.full_messages, status: 422
         end

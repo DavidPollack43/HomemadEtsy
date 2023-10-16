@@ -25,6 +25,10 @@ export const getCartItems = (state) => state.cart ? Object.values(state.cart) : 
 
 export const getCartItem = (state) => (itemId) => state.cart ? state.cart[itemId] : null;
 
+export const getCartItemByProductId = (state, productId) => {
+    return Object.values(state.cart).find(item => item.product.productId === parseInt(productId));
+}
+
 export const fetchCart = () => async (dispatch) => {
     const res = await fetch("/api/cart_items");
     if(res.ok){
