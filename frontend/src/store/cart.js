@@ -55,6 +55,25 @@ export const addToCart = (productId, quantity) => async(dispatch) => {
     }
 }
 
+export const updateToCart = (cartItemId, quantity) => async(dispatch) => {
+    const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({cartItemId: cartItemId, quantity: quantity})
+    })
+    if(res.ok){
+        const data = await res.json();
+        dispatch(receiveCartItem(data));
+        return true;
+    }else{
+        const errorMessage = await res.json();
+        console.error("Failed to update cart", errorMessage.message || "Unknown Error");
+        return false;
+    }
+}
+
 //Change reducer accordingly
 
 //TODO
