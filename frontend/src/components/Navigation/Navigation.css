@@ -36,4 +36,12 @@ i{
     font-style: normal;
     font-weight: normal;
 }
+
+.cartLogo {
+    width: 2%;
+    height: auto;
+    right: 5%;
+    position: absolute;
+    top: 2.5%;
+}
   

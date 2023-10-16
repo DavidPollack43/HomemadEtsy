@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import Logo from './homemadEtsy.png'
+import Cart from './cart.svg'
 
 
 function Navigation(){
@@ -30,6 +31,11 @@ function Navigation(){
             <img src={Logo} alt="HomemadEtsy_Logo" />
         </NavLink>
         {sessionLinks}
+      </li>
+      <li>
+        <NavLink exact to="/cart">
+          <img src={Cart} alt="cartImage" className='cartLogo' />
+        </NavLink>
       </li>
     </ul>
   );
