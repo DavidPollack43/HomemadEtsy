@@ -16,10 +16,8 @@ export const ProductShow = () =>{
     }, [productId])
 
     const handleClick = (e) => {
-        console.log("About to handle click!")
-        console.log("Product = ", product)
-        console.log("Quantity = ", quantityForCart)
         e.preventDefault();
+        
         dispatch(addToCart(productId, quantityForCart))
     }
 
