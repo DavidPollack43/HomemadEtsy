@@ -13,13 +13,13 @@ Rails.application.routes.draw do
 
       # Product routes
       resources :products, except: [:new, :edit] do 
-        # This gives you all CRUD routes for products except new and edit which are typically not needed for APIs
       end
 
       # Order routes
       resources :orders, except: [:new, :edit, :update] do
-        # This gives you all CRUD routes for orders except new and edit
       end
+
+      resources :cart_items, except: [:new, :edit, :show]
   end
 
   get '*path', to: "static_pages#frontend_index"
