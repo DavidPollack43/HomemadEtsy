@@ -8,14 +8,14 @@ i{
 
 .profileButton{
     background-color: transparent;
-    top: 2%;
-    right: 5%;
+    top: 3%;
+    right: 2%;
     position: absolute;
 }
 
 .profile-dropdown{
-    top: 3%;
-    right: 5%;
+    top: 7%;
+    right: 2%;
     position: absolute;
 }
 
@@ -45,3 +45,6 @@ i{
     top: 2.5%;
 }
   
+.userDetails {
+    color: orange;
+}

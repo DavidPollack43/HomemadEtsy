@@ -1,14 +1,26 @@
-class CartItemsController < ApplicationController
+class Api::CartItemsController < ApplicationController
     def index
-        @cart_items = current_user.cart_items.includes(product: :user)
+        @cart_items = current_user.cart_items
+        # .includes(product: :user)
     end
 
     def create
+        # debugger
+        # @current_user
         @cart_item = current_user.cart_items.new(cart_item_params)
         if @cart_item.save
-            render :index
+            render :show
         else
             render json: @cart_item.errors.full_messages, status: 422
+        end
+    end
+
+    def show 
+        @cart_item = current_user.cart_item.find_by(id: params[:id])
+        if @cart_item
+            render :show
+        else
+            render json: ["Product is not found"], status: 404
         end
     end
 

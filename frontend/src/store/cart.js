@@ -9,6 +9,10 @@ export const receiveCart = (payload) => {
     }
 }
 
+//Action to receiveCartItem (indvidual item)
+
+//TODO
+
 export const getCartItems = (state) => state.cart ? Object.values(state.cart) : [];
 
 export const getCartItem = (state) => (itemId) => state.cart ? state.cart[itemId] : null;
@@ -25,14 +29,15 @@ export const fetchCart = () => async (dispatch) => {
 }
 
 export const addToCart = (productId, quantity) => async(dispatch) => {
+    console.log("About to csrfFetch")
     const res = await csrfFetch("/api/cart_items", {
         method: "POST",
         headers: {
-            "Content_Type": "application/json"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({product_id: productId, quantity: quantity})
     })
-
+    console.log(res)
     if(res.ok){
         const data = await res.json();
         dispatch(receiveCart(data));
@@ -44,6 +49,9 @@ export const addToCart = (productId, quantity) => async(dispatch) => {
     }
 }
 
+//Change reducer accordingly
+
+//TODO
 export const cartReducer = (state = {}, action) => {
     const nextState = Object.assign({}, state);
 

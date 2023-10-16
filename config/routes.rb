@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       resources :orders, except: [:new, :edit, :update] do
       end
 
-      resources :cart_items, except: [:new, :edit, :show]
+      resources :cart_items, except: [:new, :edit]
   end
 
   get '*path', to: "static_pages#frontend_index"

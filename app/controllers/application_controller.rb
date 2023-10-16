@@ -11,6 +11,7 @@ class ApplicationController < ActionController::API
   
   
     def current_user
+      # debugger
       return nil unless session[:session_token]
       @current_user ||= User.find_by(session_token: session[:session_token])
     end
@@ -34,6 +35,7 @@ class ApplicationController < ActionController::API
     end
   
     def login!(user)
+      # debugger
       session[:session_token] = user.reset_session_token! # token in db == token in browser cookie
       @current_user = user
     end
