@@ -57,7 +57,8 @@ export const Cart = (props) => {
                     <button className="DeleteButton" onClick={handleClick(item.id)}>Remove from Cart</button>
                 </div>
             ))}
-            <h2>Total Price = {totalPrice}</h2>
+            <br/>
+            <h2>Total Order Price = {totalPrice}</h2>
         </>
     )
 }
