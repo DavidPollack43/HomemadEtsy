@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getCartItems, updateToCart } from "../../store/cart";
+import { deleteCartItem, getCartItems, updateToCart } from "../../store/cart";
 import { useState } from 'react';
 import { useEffect } from "react";
 
@@ -31,6 +31,11 @@ export const Cart = (props) => {
         dispatch(updateToCart(itemId, newQuantity));
     }
 
+    const handleClick = (itemId) => (e) => {
+        e.preventDefault();
+        dispatch(deleteCartItem(itemId));
+    }
+
     const totalPrice = cart.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
 
     return(
@@ -48,6 +53,8 @@ export const Cart = (props) => {
                             <option key={idx} value={idx+1}>{idx + 1}</option> // Added return here.
                         ))}
                     </select>
+                    <br/>
+                    <button className="DeleteButton" onClick={handleClick(item.id)}>Remove from Cart</button>
                 </div>
             ))}
             <h2>Total Price = {totalPrice}</h2>

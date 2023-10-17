@@ -35,7 +35,7 @@ class Api::CartItemsController < ApplicationController
     def destroy
         @cart_item = current_user.cart_items.find_by(id: params[:id])
         if @cart_item && @cart_item.destroy
-            render :index
+            render json: ["Cart Item deleted"]
         else
             render json: ["Cart Item could not be deleted"], status: 422
         end
