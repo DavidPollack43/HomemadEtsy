@@ -21,12 +21,8 @@ export const ProductIndex = (props) => {
                     <div className="productPictureDiv">
                         <img src={product.photoUrl} alt="productPicture" />
                     </div>
-                    <h2>{product.title}</h2>
-                    <p>Description: {product.description}</p>
-                    <p>Price: ${product.price}</p>
-                    <p>Stock Quantity: {product.stockQuantity}</p> 
-                    <p>Category: {product.category.name}</p>
-                    <p>Seller: {product.user.username}</p>
+                    <h2 className="productTitle">{product.title}</h2>
+                    <p className="productCost">${product.price}</p>
                     <br/>
                     <Link to={`/products/${product.id}`}>Product Show</Link>
                 </div>
