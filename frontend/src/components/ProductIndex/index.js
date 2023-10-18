@@ -23,7 +23,7 @@ export const ProductIndex = (props) => {
                     </div>
                     <h2 className="productTitle">{product.title}</h2>
                     <p className="productCost">${product.price}</p>
-                    <p className="productSeller">Seller: {product.user.username}</p>
+                    <p className="productSeller">{product.user.username}</p>
                     <br/>
                     <Link to={`/products/${product.id}`}>Product Show</Link>
                 </div>
