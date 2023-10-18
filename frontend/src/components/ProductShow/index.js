@@ -16,10 +16,15 @@ export const ProductShow = () =>{
         dispatch(fetchProduct(productId));
     }, [productId])
 
+    useEffect(() => {
+        dispatch(fetchProduct(productId));
+    }, [])
+
     const handleClick = (e) => {
         e.preventDefault();
 
         if (existingCartItem){
+            // debugger
             const newQuantity = quantityForCart
             dispatch(updateToCart(existingCartItem.id, newQuantity))
         }else{
@@ -32,7 +37,8 @@ export const ProductShow = () =>{
         setQuantityForCart(e.target.value)
     }
 
-    return (
+    return (product) ? 
+    (
         <>
             <h1>{product.title}</h1>
             <p>{product.description}</p>
@@ -47,6 +53,8 @@ export const ProductShow = () =>{
             <br/>
             <button onClick={handleClick}>Add to Cart</button>
         </>
+    ) : (
+        null
     )
 }
 

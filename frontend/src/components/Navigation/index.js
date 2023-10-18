@@ -6,10 +6,20 @@ import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import Logo from './homemadEtsy.png'
 import Cart from './cart.svg'
+import { useEffect } from 'react';
+import { fetchCart } from '../../store/cart';
+import { useDispatch } from 'react-redux'
 
 
 function Navigation(){
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (sessionUser){
+      dispatch(fetchCart())
+    }
+  }, [sessionUser])
 
   let sessionLinks;
   if (sessionUser) {

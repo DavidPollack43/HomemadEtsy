@@ -1,12 +1,15 @@
 class Api::CartItemsController < ApplicationController
     def index
+        # debugger
         @cart_items = current_user.cart_items.includes(product: :user)
+        render :index
     end
 
     def create
         # debugger
         # @current_user
         @cart_item = current_user.cart_items.new(cart_item_params)
+        # debugger
         if @cart_item.save
             render :show
         else
@@ -25,6 +28,7 @@ class Api::CartItemsController < ApplicationController
 
     def update
         @cart_item = current_user.cart_items.find_by(id: params[:id])
+        # debugger
         if @cart_item.update(cart_item_params)
             render :show
         else

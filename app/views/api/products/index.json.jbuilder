@@ -1,6 +1,7 @@
 @products.each do |product|
     json.set! product.id do 
         json.extract! product, :id, :title, :description, :price, :stock_quantity
+        json.photoUrl product.photo.attached? ? product.photo.url : nil 
         json.user do 
             json.id product.user.id
             json.username product.user.username

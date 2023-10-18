@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteCartItem, getCartItems, updateToCart } from "../../store/cart";
+import { deleteCartItem, fetchCart, getCartItems, updateToCart } from "../../store/cart";
 import { useState } from 'react';
 import { useEffect } from "react";
 
@@ -17,6 +17,10 @@ export const Cart = (props) => {
         });
         setQuantityForCart(initialQuantities)
     },[cart])
+
+    useEffect(() => {
+        dispatch(fetchCart())
+    }, [])
 
 
     const setQuantity = (e, itemId) => {
@@ -37,8 +41,8 @@ export const Cart = (props) => {
     }
 
     const totalPrice = cart.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
-
-    return(
+    return (cart.length > 0) ? 
+    (
         <>
             {cart.map(item => (
                 <div key={item.id} className="cartItem">
@@ -60,6 +64,8 @@ export const Cart = (props) => {
             <br/>
             <h2>Total Order Price = {totalPrice}</h2>
         </>
+    ) : (
+        null
     )
 }
 

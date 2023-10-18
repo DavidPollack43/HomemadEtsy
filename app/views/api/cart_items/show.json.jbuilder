@@ -7,4 +7,5 @@ json.product do
     json.description @cart_item.product.description
     json.price @cart_item.product.price
     json.stock_quantity @cart_item.product.stock_quantity
+    json.photoUrl @cart_item.product.photo.attached? ? @cart_item.product.photo.url : nil 
 end
