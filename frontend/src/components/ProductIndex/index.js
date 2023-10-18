@@ -17,16 +17,17 @@ export const ProductIndex = (props) => {
     return(
     <div className="products-container">
             {products.map(product => (
-                <div key={product.id} className="product">
-                    <div className="productPictureDiv">
-                        <img src={product.photoUrl} alt="productPicture" />
+                <Link to={`/products/${product.id}`} key={product.id}>
+                    <div key={product.id} className="product">
+                        <div className="productPictureDiv">
+                            <img src={product.photoUrl} alt="productPicture" />
+                        </div>
+                        <h2 className="productTitle">{product.title}</h2>
+                        <p className="productCost">${product.price}</p>
+                        <p className="productSeller">{product.user.username}</p>
+                        <br/>
                     </div>
-                    <h2 className="productTitle">{product.title}</h2>
-                    <p className="productCost">${product.price}</p>
-                    <p className="productSeller">{product.user.username}</p>
-                    <br/>
-                    <Link to={`/products/${product.id}`}>Product Show</Link>
-                </div>
+                </Link>
             ))}
         </div>
     );
