@@ -18,13 +18,15 @@ export const ProductIndex = (props) => {
     <div className="products-container">
             {products.map(product => (
                 <div key={product.id} className="product">
+                    <div className="productPictureDiv">
+                        <img src={product.photoUrl} alt="productPicture" />
+                    </div>
                     <h2>{product.title}</h2>
                     <p>Description: {product.description}</p>
                     <p>Price: ${product.price}</p>
                     <p>Stock Quantity: {product.stockQuantity}</p> 
                     <p>Category: {product.category.name}</p>
                     <p>Seller: {product.user.username}</p>
-                    <img src={product.photoUrl} alt="DemoPic" />
                     <br/>
                     <Link to={`/products/${product.id}`}>Product Show</Link>
                 </div>
