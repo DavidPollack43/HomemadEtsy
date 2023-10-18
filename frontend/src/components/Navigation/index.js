@@ -5,7 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import Logo from './homemadEtsy.png'
-import Cart from './cart.svg'
+import Cart from './cartWhite.svg'
 import { useEffect } from 'react';
 import { fetchCart } from '../../store/cart';
 import { useDispatch } from 'react-redux'
@@ -39,7 +39,7 @@ function Navigation(){
     <ul>
       <li>
         <NavLink exact to="/">
-            <img src={Logo} alt="HomemadEtsy_Logo" />
+            <img className='logo' src={Logo} alt="HomemadEtsy_Logo" />
         </NavLink>
         {sessionLinks}
       </li>

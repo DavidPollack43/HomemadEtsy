@@ -8,26 +8,26 @@
 
 .search-input {
     width: 65vw;
-    border: none;
+    border: solid #999999;
     outline: none;
-    background-color: #4d4d4d;
+    background-color: #191919;
     color: white;
     font-size: 16px;
     flex-grow: 1;
     top: 2%;
-    position: fixed;
-    right: 10%;
-
+    position: absolute;
+    right: 12%;
+    border-radius: 25px;
 }
 
 .search-button {
     border: red;
     cursor: pointer;
     outline: red;
-    position: fixed;
-    top: 3%;
-    right: 10%;
-    width: 40px;
+    position: absolute;
+    top: 3.5%;
+    right: 13%;
+    width: 35px;
     height: auto;
     background-color: transparent;
     color: white;

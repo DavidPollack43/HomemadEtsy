@@ -1,5 +1,6 @@
 li{
     list-style-type: none;
+    margin-bottom: 5%;
 }
 
 i{
@@ -8,14 +9,14 @@ i{
 
 .profileButton{
     background-color: transparent;
-    top: 3%;
+    top: 3.5%;
     right: 2%;
     position: absolute;
 }
 
 .logo{
-    position: fixed;
-    top: 5%;
+    position: absolute;
+    top: 2%;
 }
 .profile-dropdown{
     top: 7%;
@@ -46,7 +47,7 @@ i{
     height: auto;
     right: 5%;
     position: absolute;
-    top: 2.5%;
+    top: 3%;
 }
   
 .userDetails {
