@@ -9,6 +9,7 @@ import Cart from './cart.svg'
 import { useEffect } from 'react';
 import { fetchCart } from '../../store/cart';
 import { useDispatch } from 'react-redux'
+import SearchBar from '../SearchBar';
 
 
 function Navigation(){
@@ -42,6 +43,7 @@ function Navigation(){
         </NavLink>
         {sessionLinks}
       </li>
+        <SearchBar />
       <li>
         <NavLink exact to="/cart">
           <img src={Cart} alt="cartImage" className='cartLogo' />

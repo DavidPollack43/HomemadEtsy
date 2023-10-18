@@ -13,6 +13,10 @@ i{
     position: absolute;
 }
 
+.logo{
+    position: fixed;
+    top: 5%;
+}
 .profile-dropdown{
     top: 7%;
     right: 2%;
