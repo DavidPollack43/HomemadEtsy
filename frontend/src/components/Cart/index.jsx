@@ -4,6 +4,7 @@ import { deleteCartItem, fetchCart, getCartItems, updateToCart } from "../../sto
 import { useState } from 'react';
 import { useEffect } from "react";
 import "./index.css"
+import xPic from './XGrey.svg'
 
 export const Cart = (props) => {
     const dispatch = useDispatch();
@@ -69,13 +70,20 @@ export const Cart = (props) => {
                                     </div>
                                  </div>
                             </div>
+                            <div className="PriceCart">
+                                <p className="totalCost">${item.product.price * item.quantity}</p>
+                                <div className="Shipping">
+                                    <p className="shippingWord">Shipping:</p>
+                                    <p className="freeWord">Free</p>
+                                </div>
+                            </div>
                         </div>
-                        <p>{item.product.username}</p>
-                        <p>{item.product.price}</p>
-                        <p>{item.quantity}</p>
-                        <p>Total Price of Item: {item.product.price * item.quantity}</p>
                         <br/>
-                        <button className="DeleteButton" onClick={handleClick(item.id)}>Remove from Cart</button>
+                        <div className="flexXButton">
+                            <div className="XButtonDiv">
+                                <button className="DeleteButtonCart" onClick={handleClick(item.id)}><img src={xPic} className="xPic" alt="" />Remove</button>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
