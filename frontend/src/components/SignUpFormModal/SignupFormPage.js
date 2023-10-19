@@ -45,9 +45,6 @@ function SignupFormPage() {
             <br/>
             <p>Registration is easy</p>
             <br/>
-            <ul>
-                {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
             <label>
                 Email
                 <br/>
@@ -91,6 +88,10 @@ function SignupFormPage() {
                 required
                 />
             </label>
+                <ul>
+                <br/>
+                    {errors.map(error => <li key={error}>{error}</li>)}
+                </ul>
             <button type="submit" className='submitButton'>Register</button>
         </form>
     </div>
