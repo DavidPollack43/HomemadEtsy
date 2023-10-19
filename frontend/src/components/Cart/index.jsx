@@ -88,7 +88,9 @@ export const Cart = (props) => {
                 ))}
             </div>
             <br/>
-            <h2>Total Order Price = {totalPrice}</h2>
+            <div className="checkOutCart">
+                <h2 className="TotalPrice">Item(s) total: {totalPrice}</h2>
+            </div>
         </>
     ) : (
         null
