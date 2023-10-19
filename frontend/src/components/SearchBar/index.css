@@ -7,7 +7,7 @@
 }
 
 .search-input {
-    width: 65vw;
+    width: 55vw;
     border: solid #999999;
     outline: none;
     background-color: #191919;
@@ -16,7 +16,7 @@
     flex-grow: 1;
     top: 2%;
     position: absolute;
-    right: 12%;
+    right: 22%;
     border-radius: 25px;
 }
 
@@ -26,7 +26,7 @@
     outline: red;
     position: absolute;
     top: 3.5%;
-    right: 13%;
+    right: 23%;
     width: 35px;
     height: auto;
     background-color: transparent;
