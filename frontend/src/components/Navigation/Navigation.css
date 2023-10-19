@@ -75,3 +75,28 @@ i{
     bottom: -0.2vh;
 }
 
+.categories{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: solid rgba(0, 0, 0, .4);
+}
+
+.catList{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+}
+
+.cat{
+    color: #999999;
+    margin: 0 5vw;
+    padding: 1% 0%;
+    cursor: pointer;
+}
+

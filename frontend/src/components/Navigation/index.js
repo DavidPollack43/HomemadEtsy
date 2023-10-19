@@ -36,20 +36,31 @@ function Navigation(){
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">
-            <img className='logo' src={Logo} alt="HomemadEtsy_Logo" />
-        </NavLink>
-        {sessionLinks}
-      </li>
-        <SearchBar />
-      <li>
-        <NavLink exact to="/cart">
-          <img src={Cart} alt="cartImage" className='cartLogo' />
-        </NavLink>
-      </li>
-    </ul>
+    <>
+      <ul>
+        <li>
+          <NavLink exact to="/">
+              <img className='logo' src={Logo} alt="HomemadEtsy_Logo" />
+          </NavLink>
+          {sessionLinks}
+        </li>
+          <SearchBar />
+        <li>
+          <NavLink exact to="/cart">
+            <img src={Cart} alt="cartImage" className='cartLogo' />
+          </NavLink>
+        </li>
+      </ul>
+      <div className='categories'>
+        <ul className='catList'>
+          <li className='cat'>Jewlry & Accessories</li>
+          <li className='cat'>Clothing & Shoes</li>
+          <li className='cat'>Home & Living</li>
+          <li className='cat'>Wedding & Party</li>
+          <li className='cat'>Craft Supplies</li>
+        </ul>
+      </div>
+    </>
   );
 }
 
