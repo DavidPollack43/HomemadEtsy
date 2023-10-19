@@ -4,7 +4,7 @@
         json.id item.id
         json.quantity item.quantity
         json.product do 
-            # json.username item.product.user.username
+            json.username item.product.user.username #COULD CAUSE ISSUES WITH RELOADING, IF SO COMMENT OUT
             json.productId item.product.id
             json.title item.product.title
             json.description item.product.description

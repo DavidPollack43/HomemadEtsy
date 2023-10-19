@@ -48,20 +48,32 @@ export const Cart = (props) => {
             <div className="CartItemsDiv">           
                 {cart.map(item => (
                     <div key={item.id} className="cartItem">
-                        <h2>{item.product.title}</h2>
-                        <div className="productPictureDivCart">
-                            <img src={item.product.photoUrl} alt="productPicture" className="productImageCart"/>
+                        <div className="sellerCartDiv">
+                            <h2 className="sellerCart">{item.product.username}</h2>
+                        </div>
+                        <div className="productPicTitleDiv">
+                            <div className="productPictureDivCart">
+                                <img src={item.product.photoUrl} alt="productPicture" className="productImageCart"/>
+                            </div>
+                            <div className="titleDescriptionDiv">
+                                 <p className="productCartTitle">{item.product.title}</p>
+                                 <div className="descriptionQuantity">
+                                    <p className="prodcutCartDescription">{item.product.description}</p>
+                                    <div className="quantityOptionsDiv">
+                                        <p className="quantityCart">Quantity</p>
+                                        <select value={quantityForCart[item.id] || ""} onChange={(e) => setQuantity(e, item.id)} className="selectionCart">
+                                            {[...Array(item.product.stockQuantity)].map((_, idx) => (
+                                                <option key={idx} value={idx+1}>{idx + 1}</option> // Added return here.
+                                            ))}
+                                        </select>
+                                    </div>
+                                 </div>
+                            </div>
                         </div>
                         <p>{item.product.username}</p>
-                        <p>{item.product.description}</p>
                         <p>{item.product.price}</p>
                         <p>{item.quantity}</p>
                         <p>Total Price of Item: {item.product.price * item.quantity}</p>
-                        <select value={quantityForCart[item.id] || ""} onChange={(e) => setQuantity(e, item.id)}>
-                            {[...Array(item.product.stockQuantity)].map((_, idx) => (
-                                <option key={idx} value={idx+1}>{idx + 1}</option> // Added return here.
-                            ))}
-                        </select>
                         <br/>
                         <button className="DeleteButton" onClick={handleClick(item.id)}>Remove from Cart</button>
                     </div>
