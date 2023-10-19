@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" width="48" height="48" aria-hidden="true" focusable="false">
+    <style>
+        
+            .is-in-view #e0NMFoeIPOT2_to {animation: e0NMFoeIPOT2_to__to 2000ms linear 1 normal forwards} @keyframes e0NMFoeIPOT2_to__to {0% {transform: translate(44.162561px,5.846695px)} 8% {transform: translate(44.162561px,5.846695px); animation-timing-function: cubic-bezier(0.15,0,1,1)} 16.5% {transform: translate(42.257336px,6.69656px); animation-timing-function: cubic-bezier(0.25,0,0.75,1)} 28% {transform: translate(46.27px,7.700005px)} 36.5% {transform: translate(42.752561px,5.5px)} 48% {transform: translate(44.150002px,6.297191px)} 100% {transform: translate(44.150002px,6.297191px)}}
+            .is-in-view #e0NMFoeIPOT2_tr {animation: e0NMFoeIPOT2_tr__tr 2000ms linear 1 normal forwards} @keyframes e0NMFoeIPOT2_tr__tr {0% {transform: rotate(-5deg)} 8% {transform: rotate(-5deg); animation-timing-function: cubic-bezier(0.15,0,1,1)} 16.5% {transform: rotate(-7deg); animation-timing-function: cubic-bezier(0.25,0,0.75,1)} 28% {transform: rotate(7deg)} 36.5% {transform: rotate(-5deg)} 48% {transform: rotate(0deg)} 100% {transform: rotate(0deg)}}
+            .is-in-view #e0NMFoeIPOT5_to {animation: e0NMFoeIPOT5_to__to 2000ms linear 1 normal forwards} @keyframes e0NMFoeIPOT5_to__to {0% {transform: translate(4.2px,5.697011px)} 8% {transform: translate(4.2px,5.697011px); animation-timing-function: cubic-bezier(0.15,0,1,1)} 16.5% {transform: translate(5.826704px,6.546839px); animation-timing-function: cubic-bezier(0.25,0,0.75,1)} 28% {transform: translate(1.52px,7.701463px)} 36.5% {transform: translate(5.294274px,5.6px)} 48% {transform: translate(3.85px,6.297191px)} 100% {transform: translate(3.85px,6.297191px)}}
+            .is-in-view #e0NMFoeIPOT5_tr {animation: e0NMFoeIPOT5_tr__tr 2000ms linear 1 normal forwards} @keyframes e0NMFoeIPOT5_tr__tr {0% {transform: rotate(5deg)} 8% {transform: rotate(5deg); animation-timing-function: cubic-bezier(0.15,0,1,1)} 16.5% {transform: rotate(7deg); animation-timing-function: cubic-bezier(0.25,0,0.75,1)} 28% {transform: rotate(-7deg)} 36.5% {transform: rotate(5deg)} 48% {transform: rotate(0deg)} 100% {transform: rotate(0deg)}}
+            .is-in-view #e0NMFoeIPOT8_to {animation: e0NMFoeIPOT8_to__to 2000ms linear 1 normal forwards} @keyframes e0NMFoeIPOT8_to__to {0% {transform: translate(28.52px,15.1px)} 8% {transform: translate(28.52px,15.1px); animation-timing-function: cubic-bezier(0.15,0,1,1)} 16.5% {transform: translate(26.96px,16.52px); animation-timing-function: cubic-bezier(0.284467,0,0.625227,0.383992)} 18.5% {transform: translate(27.14px,16.214055px); animation-timing-function: cubic-bezier(0.310382,0.25506,0.719913,0.848254)} 19.5% {transform: translate(27.3px,15.96px)} 20.5% {transform: translate(27.47px,15.63px)} 22.5% {transform: translate(27.96px,14.98px)} 24.5% {transform: translate(28.46px,14.3px)} 27% {transform: translate(29.004407px,13.613261px); animation-timing-function: cubic-bezier(0.36087,0.641427,0.696459,1)} 28% {transform: translate(29.07px,13.52px)} 28.5% {transform: translate(28.952353px,13.590588px)} 30% {transform: translate(28.55px,13.84px)} 31% {transform: translate(28.3px,14px)} 32% {transform: translate(28.13px,14.18px)} 33% {transform: translate(27.85px,14.3px)} 33.5% {transform: translate(27.776555px,14.35px)} 34% {transform: translate(27.6px,14.4px)} 34.5% {transform: translate(27.540925px,14.5px)} 35.5% {transform: translate(27.305294px,14.6px)} 36.5% {transform: translate(27.07px,14.72px)} 48% {transform: translate(27.765359px,14.148534px)} 100% {transform: translate(27.765359px,14.148534px)}}
+            .is-in-view #e0NMFoeIPOT8_tr {animation: e0NMFoeIPOT8_tr__tr 2000ms linear 1 normal forwards} @keyframes e0NMFoeIPOT8_tr__tr {0% {transform: rotate(-5deg)} 8% {transform: rotate(-5deg); animation-timing-function: cubic-bezier(0.15,0,1,1)} 16.5% {transform: rotate(-7deg); animation-timing-function: cubic-bezier(0.25,0,0.75,1)} 28% {transform: rotate(7deg)} 36.5% {transform: rotate(-5deg)} 48% {transform: rotate(0deg)} 100% {transform: rotate(0deg)}}
+        
+    </style>
+    <g id="e0NMFoeIPOT2_to" transform="translate(44.162561,5.846695)">
+        <g id="e0NMFoeIPOT2_tr" transform="rotate(-5)">
+            <g transform="translate(-44.150002,-6.29719)">
+                <path d="M34.7,33.1l4.4-4.4c4.8-4.8,4.8-12.6,0-17.4v0c-4-4-10.1-4.9-14.7-2.1L17.7,15l17,18.1Z" fill="#4d6bc6"></path>
+                <path d="M36.5,33.5l-2.2-2.2l3.6-3.6c4.2-4.2,4.2-11,0-15.2C34.4,9,29,8.4,25.1,10.8L23.5,8.2C28.6,5,35.6,5.8,40.1,10.3c5.4,5.4,5.4,14.2,0,19.6l-3.6,3.6Z" fill="#222"></path>
+            </g>
+        </g>
+    </g>
+    <g id="e0NMFoeIPOT5_to" transform="translate(4.2,5.697011)">
+        <g id="e0NMFoeIPOT5_tr" transform="rotate(5)">
+            <g transform="translate(-3.85,-6.297191)">
+                <path d="M40.5,25.2l-4.8-4.8v0l-9-9c-4.8-4.8-12.6-4.8-17.4,0s-4.9,12.6-.1,17.4L15.4,35v0l4.4,4.4c1.2,1.2,3.2,1.2,4.4,0s1.2-3.2,0-4.4l-1.7-1.7l3.9,3.9c1.2,1.2,3.2,1.2,4.4,0s1.2-3.2,0-4.4l1.1,1.1c1.2,1.2,3.2,1.2,4.4,0v0c1.2-1.2,1.2-3.2,0-4.4l-4.9-4.9v0l4.9,4.9c1.2,1.2,3.2,1.2,4.4,0c1-1.2,1-3.1-.2-4.3Z" fill="#d7e6f5"></path>
+                <path d="M42.7,27.4c0-1.2-.5-2.4-1.4-3.3l-4.8-4.8v0l-9-9c-5.4-5.4-14.2-5.4-19.6,0s-5.4,14.2,0,19.6l6.2,6.2v0l4.4,4.4c.9.9,2.1,1.3,3.3,1.3s2.4-.4,3.3-1.3c.4-.4.7-.9,1-1.5.7.4,1.5.6,2.3.6c1.2,0,2.4-.4,3.3-1.3.6-.6,1-1.3,1.2-2c.3.1.7.1,1,.1c1.2,0,2.4-.5,3.3-1.4.8-.8,1.3-1.9,1.3-3c1.1-.1,2.2-.5,3-1.3.7-.9,1.2-2.1,1.2-3.3Zm-3.6,1.1c-.6.6-1.6.6-2.2,0l-7.6-7.6L27.2,23l7.6,7.6c.6.6.6,1.6,0,2.2s-1.6.6-2.2,0l-1.1-1.1L25,25.2l-2.2,2.2l6.5,6.5c.6.6.6,1.6,0,2.2s-1.6.6-2.2,0L25,33.9l-4.4-4.4-2.2,2.2l4.4,4.4c.6.6.6,1.6,0,2.2s-1.6.6-2.2,0l-1.9-1.9v0L10,27.7c-4.2-4.2-4.2-11,0-15.2s11-4.2,15.2,0l6.2,6.2v0L39,26.3c.3.3.5.7.5,1.1.1.4-.1.8-.4,1.1Z" fill="#222"></path>
+            </g>
+        </g>
+    </g>
+    <g id="e0NMFoeIPOT8_to" transform="translate(28.52,15.1)">
+        <g id="e0NMFoeIPOT8_tr" transform="rotate(-5)">
+            <g transform="translate(-27.765359,-14.148534)">
+                <path d="M32.3,15.1L23,19.8c-1.7,1.2-4.2.8-5.4-.9v0c-1.2-1.7-.8-4.1.9-5.4c2.1-1.5,4.7-3.4,5.6-3.9C28.7,6.7,35,7.4,39,11.4v0" fill="#4d6bc6"></path>
+                <path d="M19.4,14.7l1.9-1.4c1-.7,2-1.4,2.7-1.9.4-.3.7-.5.9-.6.7-.4,1.4-.7,2.1-.9c3.7-1.2,8-.3,10.9,2.6l2.2-2.2c-4.2-4.2-10.9-5.2-16-2.5-.3.1-.5.3-.8.4-.4.3-1.3.9-2.3,1.6-.5.3-.9.7-1.4,1l-1.9,1.4c-2.4,1.7-3,5.1-1.3,7.5.8,1.2,2.1,2,3.5,2.2.3.1.6.1.9.1c1.1,0,2.2-.3,3.1-1l5.9-4.1l2.6-1.8-2.2-2.2-2.6,1.8-5.4,3.8c-.5.4-1.1.5-1.7.4s-1.1-.4-1.5-1c-.9-1-.6-2.5.4-3.2Z" fill="#222"></path>
+            </g>
+        </g>
+    </g>
+</svg>

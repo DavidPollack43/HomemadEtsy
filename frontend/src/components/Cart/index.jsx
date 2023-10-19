@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useEffect } from "react";
 import "./index.css"
 import xPic from './XGrey.svg'
+import hands from './hands.svg'
 
 export const Cart = (props) => {
     const dispatch = useDispatch();
@@ -45,7 +46,12 @@ export const Cart = (props) => {
     return (cart.length > 0) ? 
     (
         <>
-        <h1>{cart.length} items in your cart</h1>
+        <h1 className="itemsInCart">{cart.length} items in your cart</h1>
+        <div className="purchaseProtection">
+            <img src={hands} alt="" />
+            <p>HomemadEtsy Purchase Protection</p>
+            <p>Shop confidently on HomemadEtsy knowing if something goes wrong with an order, we've got your back.</p>
+        </div>
             <div className="CartItemsDiv">           
                 {cart.map(item => (
                     <div key={item.id} className="cartItem">
