@@ -14,6 +14,7 @@ export const ProductShow = () =>{
     const product = useSelector(getProduct(productId));
     const [quantityForCart, setQuantityForCart] = useState(1)
     const existingCartItem = useSelector(state => getCartItemByProductId(state, productId));
+    const [addedToCart, setAddedToCart] = useState(false);
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
@@ -32,6 +33,7 @@ export const ProductShow = () =>{
         }else{
             dispatch(addToCart(productId, quantityForCart))
         }
+        setAddedToCart(true);
     }
 
     const setQuantity = (e) => {
@@ -68,6 +70,7 @@ export const ProductShow = () =>{
                  ))}
             </select>
             <button onClick={handleClick} className='addToCart'>Add to Cart</button>
+            {addedToCart ? <p className='addedToCartWords'>Successfully added to cart!</p> : null};
         </>
     ) : (
         null
