@@ -7,6 +7,7 @@ import { useState } from 'react';
 import "./index.css"
 import purpleIcon from './purpleIcon.svg'
 import checkMark from './checkMarkBlue.svg'
+import LoginFormModal from '../LoginFormModal';
 
 export const ProductShow = () =>{
     const dispatch = useDispatch();
@@ -15,6 +16,7 @@ export const ProductShow = () =>{
     const [quantityForCart, setQuantityForCart] = useState(1)
     const existingCartItem = useSelector(state => getCartItemByProductId(state, productId));
     const [addedToCart, setAddedToCart] = useState(false);
+    const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
@@ -26,6 +28,10 @@ export const ProductShow = () =>{
 
     const handleClick = (e) => {
         e.preventDefault();
+
+        if(!sessionUser){
+
+        }
 
         if (existingCartItem){
             const newQuantity = quantityForCart
@@ -69,8 +75,12 @@ export const ProductShow = () =>{
                     <option key={idx} value={idx+1}>{idx + 1}</option> // Added return here.
                  ))}
             </select>
+            {sessionUser ? (
             <button onClick={handleClick} className='addToCart'>Add to Cart</button>
-            {addedToCart ? <p className='addedToCartWords'>Successfully added to cart!</p> : null};
+            ) : (
+               <button className='pleaseLogin'>Please login to add to cart</button>
+            )} 
+            {addedToCart ? <p className='addedToCartWords'>Successfully added to cart!</p> : null}
         </>
     ) : (
         null

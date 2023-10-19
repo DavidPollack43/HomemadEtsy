@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf";
+import { REMOVE_CURRENT_USER } from "./session";
 
 export const RECEIVE_CART = 'cart/RECEIVE_CART';
 export const RECEIVE_CART_ITEM = "cart/RECEIVE_CART_ITEM"
@@ -113,6 +114,8 @@ export const cartReducer = (state = {}, action) => {
         case REMOVE_CART_ITEM:
             delete nextState[action.payload]
             return nextState;
+        case REMOVE_CURRENT_USER:
+            return {};
         default:
             return state;
     }
