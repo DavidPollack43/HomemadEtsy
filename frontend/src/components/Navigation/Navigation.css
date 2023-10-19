@@ -18,6 +18,7 @@ i{
     top: 3.5%;
     right: 7%;
     position: absolute;
+    cursor: pointer;
 }
 
 .logo{

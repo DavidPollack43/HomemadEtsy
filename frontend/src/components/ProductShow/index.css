@@ -1,6 +1,6 @@
 .productPictureDivShow{
-    width: 130%;
-    height: 62vh;
+    width: 93%;
+    height: 65vh;
     overflow: hidden;
     border-radius: 5px;
     margin-bottom: 1.5%;
@@ -12,7 +12,7 @@
 
 .productImage{
     border-radius: 10px;
-    width: 38%;
+    width: 54%;
     height: 100%;
 } 
 
@@ -47,20 +47,29 @@
 
 .seller{
     color: #999999;
-    position: absolute;
-    top: 33.5%;
-    left: 58%;
+    /* position: absolute; */
+    /* top: 33.5%;
+    left: 58%; */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: small;
     font-weight: bold;
+    margin-top: -1%;
 }
 
 .purple{
-    position: absolute;
-    left: 61.8%;
-    top: 32.7%;
-    width: 2%;
+    width: 5%;
     height: auto;
+    z-index: 10;
+    margin-top: -0.5%;
+}
+
+.sellerDiv{
+    position: absolute;
+    top: 34%;
+    left: 58%;
+    width: 30vw;
+    display: flex;
+    align-items: center;
 }
 
 .checkMark{
@@ -77,4 +86,45 @@
     top: 38.2%;
     color: #999999;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.quantity{
+    color: #999999;
+    position: absolute;
+    top: 45%;
+    left: 58%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: small;
+}
+
+.select{
+    position: absolute;
+    top: 48%;
+    left: 58%;
+    height: 5vh;
+    width: 40vw;
+    background-color: #191919;
+    color: #999999;
+    cursor: pointer;
+}
+
+.addToCart{
+    position: absolute;
+    top: 60%;
+    left: 58%;
+    height: 5vh;
+    width: 40vw;
+    background-color: #292828;
+    color: #FFF;
+    border: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.addToCart:hover{
+    box-shadow: rgba(0, 0, 0, 1.0);
+    background-color: #999999;
 }

@@ -53,18 +53,20 @@ export const ProductShow = () =>{
             <p className='demand'>In demand. Buy now while supplies last!</p>
             <p className='price'>${product.price}</p>
             <p className='title'>{product.title}</p>
-            <p className='seller'>{product.user.username}</p>
-            <img src={purpleIcon} className='purple' alt="icon" />
+            <div className='sellerDiv'>
+                <p className='seller'>{product.user.username}</p>
+                <img src={purpleIcon} className='purple' alt="icon" />
+            </div>
             <img src={checkMark} alt="checkMark" className='checkMark' />
             <p className='returns'>Returns & exchanges accepted</p>
+            <p className='quantity'>Quantity</p>
             
-            <select value={quantityForCart} onChange={setQuantity}>
+            <select value={quantityForCart} onChange={setQuantity} className='select'>
                 {[...Array(product.stockQuantity)].map((_, idx) => (
                     <option key={idx} value={idx+1}>{idx + 1}</option> // Added return here.
                  ))}
             </select>
-            {/* <br/>
-            <button onClick={handleClick}>Add to Cart</button> */}
+            <button onClick={handleClick} className='addToCart'>Add to Cart</button>
         </>
     ) : (
         null
