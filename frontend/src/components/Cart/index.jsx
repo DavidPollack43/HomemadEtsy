@@ -89,7 +89,11 @@ export const Cart = (props) => {
             </div>
             <br/>
             <div className="checkOutCart">
-                <h2 className="TotalPrice">Item(s) total: {totalPrice}</h2>
+                <div className="itemTotalCO">
+                    <h2 className="TotalPrice">Item(s) total: </h2>
+                    <h2 className="totalPriceCO">${totalPrice}</h2>
+                </div>
+                <button className="checkOutCartButton">Check Out</button>
             </div>
         </>
     ) : (
