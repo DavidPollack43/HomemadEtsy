@@ -1,4 +1,4 @@
-.productPictureDiv{
+.productPictureDivShow{
     width: 130%;
     height: 62vh;
     overflow: hidden;
@@ -14,4 +14,67 @@
     border-radius: 10px;
     width: 38%;
     height: 100%;
+} 
+
+.demand{
+    color: #E699A4;
+    position: absolute;
+    left: 58%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    top: 20%;
+}
+
+.price{
+    color: #BFBFBF;
+    left: 58%;
+    top: 24%;
+    position: absolute;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.title{
+    color: #999999;
+    position: absolute;
+    left: 58%;
+    top: 30%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: medium;
+}
+
+.seller{
+    color: #999999;
+    position: absolute;
+    top: 33.5%;
+    left: 58%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: small;
+    font-weight: bold;
+}
+
+.purple{
+    position: absolute;
+    left: 61.8%;
+    top: 32.7%;
+    width: 2%;
+    height: auto;
+}
+
+.checkMark{
+    width: 1.2%;
+    height: auto;
+    top: 38%;
+    left: 58%;
+    position: absolute;
+}
+
+.returns{
+    position: absolute;
+    left: 60%;
+    top: 38.2%;
+    color: #999999;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

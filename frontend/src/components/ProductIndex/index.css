@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 2% 5%;
+    padding: 2% 10%;
     gap: 1.5%;
 }
 

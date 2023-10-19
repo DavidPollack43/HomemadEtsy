@@ -5,6 +5,8 @@ import { fetchProduct, getProduct } from '../../store/products';
 import { addToCart, getCartItemByProductId, updateToCart } from '../../store/cart';
 import { useState } from 'react';
 import "./index.css"
+import purpleIcon from './purpleIcon.svg'
+import checkMark from './checkMarkBlue.svg'
 
 export const ProductShow = () =>{
     const dispatch = useDispatch();
@@ -42,18 +44,26 @@ export const ProductShow = () =>{
         <>
             {/* <h1>{product.title}</h1>
             <p>{product.description}</p>
-            <p>{product.price}</p>
             <p>{product.stockQuantity}</p> */}
-            <div className="productPictureDiv">
+            <div className="productPictureDivShow">
                 <img src={product.photoUrl} alt="productPicture" className="productImage"/>
             </div>
             <br/>
-            {/* <select value={quantityForCart} onChange={setQuantity}>
+
+            <p className='demand'>In demand. Buy now while supplies last!</p>
+            <p className='price'>${product.price}</p>
+            <p className='title'>{product.title}</p>
+            <p className='seller'>{product.user.username}</p>
+            <img src={purpleIcon} className='purple' alt="icon" />
+            <img src={checkMark} alt="checkMark" className='checkMark' />
+            <p className='returns'>Returns & exchanges accepted</p>
+            
+            <select value={quantityForCart} onChange={setQuantity}>
                 {[...Array(product.stockQuantity)].map((_, idx) => (
                     <option key={idx} value={idx+1}>{idx + 1}</option> // Added return here.
                  ))}
             </select>
-            <br/>
+            {/* <br/>
             <button onClick={handleClick}>Add to Cart</button> */}
         </>
     ) : (
