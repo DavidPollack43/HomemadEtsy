@@ -50,7 +50,7 @@ export const ProductShow = () =>{
             </div>
             <br/>
 
-            <p className='demand'>In demand. Buy now while supplies last!</p>
+            <p className='demand'>In demand. Buy now while supplies last! Only {product.stockQuantity} left!</p>
             <p className='price'>${product.price}</p>
             <p className='title'>{product.title}</p>
             <div className='sellerDiv'>
@@ -59,6 +59,7 @@ export const ProductShow = () =>{
             </div>
             <img src={checkMark} alt="checkMark" className='checkMark' />
             <p className='returns'>Returns & exchanges accepted</p>
+            <p className='description'>{product.description}</p>
             <p className='quantity'>Quantity</p>
             
             <select value={quantityForCart} onChange={setQuantity} className='select'>
