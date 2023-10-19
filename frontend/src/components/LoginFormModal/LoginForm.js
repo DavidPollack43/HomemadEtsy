@@ -68,6 +68,7 @@ function LoginForm({showModal, setShowModal}) {
               type="text"
               value={credential}
               onChange={(e) => setCredential(e.target.value)}
+              className="input"
               required
             />
           </label>
@@ -81,15 +82,17 @@ function LoginForm({showModal, setShowModal}) {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="input"
               required
             />
           </label>
 
           <br/>
-
+          <br/>
           <button className="submitButton" type="submit">Sign in</button>
         </form>
       }
+      <br/>
       <button className="submitButton" onClick={handleDemoClick}>Demo User</button>
       </div>
   );
