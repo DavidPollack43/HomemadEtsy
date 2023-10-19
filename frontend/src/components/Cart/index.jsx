@@ -49,8 +49,8 @@ export const Cart = (props) => {
         <h1 className="itemsInCart">{cart.length} items in your cart</h1>
         <div className="purchaseProtection">
             <img src={hands} alt="" />
-            <p>HomemadEtsy Purchase Protection</p>
-            <p>Shop confidently on HomemadEtsy knowing if something goes wrong with an order, we've got your back.</p>
+            <p className="hpp">HomemadEtsy Purchase Protection:</p>
+            <p className="shopWords">Shop confidently on HomemadEtsy knowing if something goes wrong with an order, we've got your back.</p>
         </div>
             <div className="CartItemsDiv">           
                 {cart.map(item => (
