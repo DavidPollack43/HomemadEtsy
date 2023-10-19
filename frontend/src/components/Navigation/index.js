@@ -53,7 +53,7 @@ function Navigation(){
       </ul>
       <div className='categories'>
         <ul className='catList'>
-          <li className='cat'>Jewlry & Accessories</li>
+          <li className='cat'>Jewelry & Accessories</li>
           <li className='cat'>Clothing & Shoes</li>
           <li className='cat'>Home & Living</li>
           <li className='cat'>Wedding & Party</li>
