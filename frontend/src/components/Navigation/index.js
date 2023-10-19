@@ -5,7 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import Logo from './homemadEtsy.png'
-import Cart from './cartWhite.svg'
+import Cart from './cartGrey.svg'
 import { useEffect } from 'react';
 import { fetchCart } from '../../store/cart';
 import { useDispatch } from 'react-redux'

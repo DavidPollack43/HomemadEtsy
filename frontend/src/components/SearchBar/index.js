@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import magGlass from './searchBarWhite.svg';
+import magGlass from './searchBarGrey.svg';
 import "./index.css";
 
 const SearchBar = (props) => {
