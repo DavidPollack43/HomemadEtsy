@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css'
+import logoutButton from './logoutGrey.svg'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -34,14 +35,14 @@ function ProfileButton({ user }) {
   return (
     <>
       <button className="profileButton" onClick={openMenu}>
-        <i className="fa-solid fa-user" style={{color: "#fdb73f"}} />
+        <i className="fa-solid fa-user" style={{color: "white"}} />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li className="userDetails">{user.username}</li>
-          <li className="userDetails">{user.email}</li>
+          <li className="userDetails">Username: <br/> {user.username}</li>
+          <li className="userDetails">Email: <br/> {user.email}</li>
           <li>
-            <button onClick={logout}>Log Out</button>
+            <p onClick={logout} className="signOutButton"> <img className="logoutImage" src={logoutButton}/> Sign Out</p>
           </li>
         </ul>
       )}

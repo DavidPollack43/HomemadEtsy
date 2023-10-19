@@ -5,9 +5,9 @@
     background-color: transparent;
     transition: background-color 0.3s, color 0.3s;
     position: absolute;
-    right: 8%;
+    right: 5%;
     border: none;
-    top: 1.9%;
+    top: 2.5%;
     cursor: pointer;
     color: #999999;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -90,6 +90,7 @@ label {
     line-height: 28px;
     color: rgb(191, 191, 191);
   }
+
 
   .modalContainer{
     display: flex;

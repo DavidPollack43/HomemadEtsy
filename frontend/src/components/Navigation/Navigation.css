@@ -7,10 +7,16 @@ i{
     background: transparent;
 }
 
+.userDetails{
+    padding: 5%;
+    color: #999999;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .profileButton{
     background-color: transparent;
     top: 3.5%;
-    right: 2%;
+    right: 7%;
     position: absolute;
 }
 
@@ -20,8 +26,13 @@ i{
 }
 .profile-dropdown{
     top: 7%;
-    right: 2%;
+    right: 6%;
+    background-color: #191919;
     position: absolute;
+    z-index: 10;
+    width: 15%;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 1);
 }
 
 .SignUpButton{
@@ -45,11 +56,22 @@ i{
 .cartLogo {
     width: 2%;
     height: auto;
-    right: 5%;
+    right: 2%;
     position: absolute;
     top: 3%;
 }
-  
-.userDetails {
-    color: orange;
+
+.signOutButton{
+    background-color: transparent;
+    cursor: pointer;
+    color: #999999;
+    margin-left: 5%;
 }
+
+.logoutImage{
+    width: 7%;
+    height: auto;
+    position: relative;
+    bottom: -0.2vh;
+}
+

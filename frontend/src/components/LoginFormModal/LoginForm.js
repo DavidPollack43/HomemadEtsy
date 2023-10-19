@@ -51,7 +51,7 @@ function LoginForm({showModal, setShowModal}) {
       {
       <form onSubmit={handleSubmit}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center" }}>
-            <h2>Sign in</h2>
+            <h2 className="SignIn">Sign in</h2>
             <button onClick={handleClick} className="registerButton">Register</button>
           </div>
           
