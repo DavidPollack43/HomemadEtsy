@@ -34,9 +34,6 @@ class User < ApplicationRecord
       user = User.find_by(username: credential)
     end
 
-    puts "Found User: #{user.inspect}"
-    puts "User authentication: #{user&.authenticate(password)}"
-
     if user && user.authenticate(password)
       return user
     else

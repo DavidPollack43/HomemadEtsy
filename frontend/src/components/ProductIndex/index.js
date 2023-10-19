@@ -8,7 +8,6 @@ import "./index.css";
 export const ProductIndex = (props) => {
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
-    console.log("Products: ", products)
 
     useEffect(() =>{
         dispatch(fetchProducts());

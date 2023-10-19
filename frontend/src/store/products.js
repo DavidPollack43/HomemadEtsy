@@ -48,8 +48,6 @@ export const productReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_PRODUCTS:
-            console.log("In reducer, going to receive Products")
-            console.log(action)
             return {...state, ...action.payload}
         case RECEIVE_PRODUCT:
             nextState[action.payload.id] = action.payload;

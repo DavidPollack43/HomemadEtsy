@@ -6,7 +6,6 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 
 function SignupFormPage() {
-    console.log("SignUpFormPage rendered")
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
