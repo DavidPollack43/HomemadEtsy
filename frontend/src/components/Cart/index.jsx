@@ -11,6 +11,7 @@ export const Cart = (props) => {
     const dispatch = useDispatch();
     const [quantityForCart, setQuantityForCart] = useState({}) //Need to make item.quantity default, but item is defined in my map
     const cart = useSelector(getCartItems);
+    const [checkOutButtonClicked, setCheckOutButtonClicked] = useState(false)
 
     useEffect(() =>{
         const initialQuantities = {};
@@ -40,6 +41,14 @@ export const Cart = (props) => {
     const handleClick = (itemId) => (e) => {
         e.preventDefault();
         dispatch(deleteCartItem(itemId));
+    }
+
+    const handleCheckOutClick= (e) => {
+        e.preventDefault();
+        cart.forEach(item => {
+            dispatch(deleteCartItem(item.id));
+        });
+        setCheckOutButtonClicked(true);
     }
 
     const totalPrice = cart.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
@@ -99,11 +108,19 @@ export const Cart = (props) => {
                     <h2 className="TotalPrice">Item(s) total: </h2>
                     <h2 className="totalPriceCO">${totalPrice}</h2>
                 </div>
-                <button className="checkOutCartButton">Check Out</button>
+                <button className="checkOutCartButton" onClick={handleCheckOutClick}>Check Out</button>
             </div>
         </>
     ) : (
-        null
+        <>
+            <h1 className="itemsInCart">{cart.length} items in your cart</h1>
+            <div className="purchaseProtection">
+                <img src={hands} alt="" />
+                <p className="hpp">HomemadEtsy Purchase Protection:</p>
+                <p className="shopWords">Shop confidently on HomemadEtsy knowing if something goes wrong with an order, we've got your back.</p>
+            </div>
+            {checkOutButtonClicked ? <h1 className="SuccesfullyPlacedOrder">Succesfully Placed Order!</h1> : null}
+        </>
     )
 }
 
