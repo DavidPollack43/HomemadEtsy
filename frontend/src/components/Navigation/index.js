@@ -10,6 +10,8 @@ import { useEffect } from 'react';
 import { fetchCart } from '../../store/cart';
 import { useDispatch } from 'react-redux'
 import SearchBar from '../SearchBar';
+import linkedIn from './linkedInOrange.svg';
+import github from './githubOrange.svg'
 
 
 function Navigation(){
@@ -49,6 +51,16 @@ function Navigation(){
           <NavLink exact to="/cart">
             <img src={Cart} alt="cartImage" className='cartLogo' />
           </NavLink>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/david-pollack-22b324292/" target='_blank' className='linkedInA'>
+            <img src={linkedIn} alt="" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/DavidPollack43" target='_blank' className='githubA'>
+            <img src={github} alt="" className='githubI' />
+          </a>
         </li>
       </ul>
       <div className='categories'>

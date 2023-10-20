@@ -101,3 +101,18 @@ i{
     cursor: pointer;
 }
 
+.linkedInA{
+    position: absolute;
+    right: 18%;
+    top: 3.5%
+}
+
+.githubA{
+    position: absolute;
+    right: 8%;
+    top: 3.3%;
+}
+
+.githubI{
+    width: 28%;
+}
