@@ -121,7 +121,6 @@ export const addToCart = (productId, quantity) => async(dispatch) => {
 }
 
 export const updateToCart = (cartItemId, quantity) => async(dispatch) => {
-    // debugger
     const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
         method: "PATCH",
         headers: {
