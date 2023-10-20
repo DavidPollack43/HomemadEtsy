@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchProducts, getProducts } from "../../store/products";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { Link } from 'react-router-dom';
+import './searchIndex.css'
 
 export const SearchIndex = () => {
     debugger
@@ -27,16 +28,16 @@ export const SearchIndex = () => {
 
     return (
         <>
-            <div className="products-container">
+            <div className="products-container-search">
                 {filteredProducts && filteredProducts.map(product => (
                     <Link to={`/products/${product.id}`} key={product.id}>
-                        <div key={product.id} className="product">
-                            <div className="productPictureDiv">
+                        <div key={product.id} className="product-search">
+                            <div className="productPictureDiv-search">
                                 <img src={product.photoUrl} alt="productPicture" />
                             </div>
-                            <h2 className="productTitle">{product.title}</h2>
-                            <p className="productCost">${product.price}</p>
-                            <p className="productSeller">{product.user.username}</p>
+                            <h2 className="productTitle-search">{product.title}</h2>
+                            <p className="productCost-search">${product.price}</p>
+                            <p className="productSeller-search">{product.user.username}</p>
                             <br/>
                         </div>
                     </Link>

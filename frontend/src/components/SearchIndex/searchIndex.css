@@ -1,20 +1,20 @@
-.products-container{
+.products-container-search{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 2% 10%;
     gap: 1.5%;
     margin-top: 10%;
 }
 
-.product {
-    flex: 1 1 calc(22.5% - 1.5%);
+.product-search {
+    flex: 0 1 calc(22.5% - 1.5%);
     box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
     padding: 0;
     margin-bottom: 1.5%;
 }
 
-.productPictureDiv{
+.productPictureDiv-search{
     width: 100%;
     height: 250px;
     overflow: hidden;
@@ -22,7 +22,7 @@
     margin-bottom: 1.5%;
 }
 
-.product img{
+.product-search img{
     width: 100%;
     height: 100%;
     object-fit: fill;
@@ -32,20 +32,20 @@
     border-radius: 10px;
 }
 
-.productTitle{
+.productTitle-search{
     font-size: smaller;
     line-height: 1.6;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.productCost{
+.productCost-search{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: medium;
     font-weight: bold;
     color: rgb(191, 191, 191);
 }
 
-.productSeller{
+.productSeller-search{
     color: rgb(191, 191, 191);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: smaller;
@@ -53,11 +53,10 @@
     padding-top: 2%;
 }
 
-.products-container a {
+.products-container-search a {
     text-decoration: none;
     color: inherit;
     display: block;
-    flex: 1 1 calc(22.5% - 1.5%);
     box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
     padding: 0;
     margin-bottom: 1.5%;

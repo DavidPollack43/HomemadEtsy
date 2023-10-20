@@ -21,8 +21,6 @@ export const getProducts = (state) => state.products ? Object.values(state.produ
 
 export const getProduct = (productId) => (state) => state.products ? state.products[productId] : null;
 
-// export const getProductsCategory = (categoryId) => (state) => state.products ? state.products.category[categoryId] : [];
-
 export const getProductsCategory = (categoryId) => (state) => {
     if (!state.products || !categoryId) {
       return [];
