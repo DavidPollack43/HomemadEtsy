@@ -10,29 +10,34 @@ export const ProductCategory = () => {
     const dispatch = useDispatch();
     const {categoryId} = useParams();
     const state = useSelector((state) => state);
-    console.log("State", state)
     const products = useSelector(getProductsCategory(categoryId));
+    const categoryName = products[0].category.name
 
     useEffect(() =>{
         dispatch(fetchProducts());
     }, [])
 
     return (products) ? (
-        <div className="products-container">
-            {products.map(product => (
-                <Link to={`/products/${product.id}`} key={product.id}>
-                    <div key={product.id} className="product">
-                        <div className="productPictureDiv">
-                            <img src={product.photoUrl} alt="productPicture" />
-                        </div>
-                        <h2 className="productTitle">{product.title}</h2>
-                        <p className="productCost">${product.price}</p>
-                        <p className="productSeller">{product.user.username}</p>
-                        <br/>
-                    </div>
-                </Link>
-            ))}
+        <>
+        <div className="catDiv">
+            <h1 className="catName">{categoryName}</h1>
         </div>
+            <div className="products-container">
+                {products.map(product => (
+                    <Link to={`/products/${product.id}`} key={product.id}>
+                        <div key={product.id} className="product">
+                            <div className="productPictureDiv">
+                                <img src={product.photoUrl} alt="productPicture" />
+                            </div>
+                            <h2 className="productTitle">{product.title}</h2>
+                            <p className="productCost">${product.price}</p>
+                            <p className="productSeller">{product.user.username}</p>
+                            <br/>
+                        </div>
+                    </Link>
+                ))}
+            </div>
+        </>
     ) : (
         null
     )

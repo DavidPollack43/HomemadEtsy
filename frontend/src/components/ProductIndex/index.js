@@ -14,21 +14,24 @@ export const ProductIndex = (props) => {
     }, [])
 
     return(
-    <div className="products-container">
-            {products.map(product => (
-                <Link to={`/products/${product.id}`} key={product.id}>
-                    <div key={product.id} className="product">
-                        <div className="productPictureDiv">
-                            <img src={product.photoUrl} alt="productPicture" />
+    <>
+    <h1 className="AllP">All HomemadEtsy Products:</h1>
+        <div className="products-container">
+                {products.map(product => (
+                    <Link to={`/products/${product.id}`} key={product.id}>
+                        <div key={product.id} className="product">
+                            <div className="productPictureDiv">
+                                <img src={product.photoUrl} alt="productPicture" />
+                            </div>
+                            <h2 className="productTitle">{product.title}</h2>
+                            <p className="productCost">${product.price}</p>
+                            <p className="productSeller">{product.user.username}</p>
+                            <br/>
                         </div>
-                        <h2 className="productTitle">{product.title}</h2>
-                        <p className="productCost">${product.price}</p>
-                        <p className="productSeller">{product.user.username}</p>
-                        <br/>
-                    </div>
-                </Link>
-            ))}
-        </div>
+                    </Link>
+                ))}
+            </div>
+    </>
     );
 }
 
