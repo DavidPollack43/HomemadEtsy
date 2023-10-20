@@ -99,9 +99,6 @@ export const deleteCartItem = (cartItemId) => async(dispatch) => {
     }
 }
 
-//Change reducer accordingly
-
-//TODO
 export const cartReducer = (state = {}, action) => {
     const nextState = Object.assign({}, state);
 
