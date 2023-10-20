@@ -9,10 +9,10 @@ export const ProductCategory = () => {
     // debugger
     const dispatch = useDispatch();
     const {categoryId} = useParams();
-    const state = useSelector((state) => state);
     const products = useSelector(getProductsCategory(categoryId));
-    const categoryName = products[0].category.name
 
+    const categoryName = products?.[0]?.category?.name ?? null
+    
     useEffect(() =>{
         dispatch(fetchProducts());
     }, [])
