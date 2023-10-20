@@ -15,7 +15,9 @@ export const ProductIndex = (props) => {
 
     return(
     <>
-    <h1 className="AllP">All HomemadEtsy Products</h1>
+    <div className="catDiv">
+        <h1 className="AllP">All HomemadEtsy Products</h1>
+    </div>
         <div className="products-container">
                 {products.map(product => (
                     <Link to={`/products/${product.id}`} key={product.id}>
