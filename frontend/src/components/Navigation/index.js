@@ -65,11 +65,21 @@ function Navigation(){
       </ul>
       <div className='categories'>
         <ul className='catList'>
-          <li className='cat'>Jewelry & Accessories</li>
-          <li className='cat'>Clothing & Shoes</li>
-          <li className='cat'>Home & Living</li>
-          <li className='cat'>Wedding & Party</li>
-          <li className='cat'>Craft Supplies</li>
+          <NavLink exact to={`/category/${1}`}>
+            <li className='cat'>Jewelry & Accessories</li>
+          </NavLink>
+          <NavLink exact to={`/category/${2}`}>
+            <li className='cat'>Clothing & Shoes</li>
+          </NavLink>
+          <NavLink exact to={`/category/${3}`}>
+            <li className='cat'>Home & Living</li>
+          </NavLink>
+          <NavLink exact to={`/category/${4}`}>
+            <li className='cat'>Wedding & Party</li>
+          </NavLink>
+          <NavLink exact to={`/category/${5}`}>
+            <li className='cat'>Craft Supplies</li>
+          </NavLink>
         </ul>
       </div>
     </>
