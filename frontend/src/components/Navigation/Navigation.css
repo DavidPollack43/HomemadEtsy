@@ -112,12 +112,13 @@ i{
 
 .githubA{
     position: absolute;
-    right: 8%;
+    right: 12.5%;
     top: 3.3%;
+    width: 2vw;
 }
 
 .githubI{
-    width: 28%;
+    width: 100%;
 }
 
 .NavLinkCat{
