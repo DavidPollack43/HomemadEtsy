@@ -1,28 +1,40 @@
-import React, {useState} from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import magGlass from './searchBarGrey.svg';
 import "./index.css";
 
 const SearchBar = (props) => {
+    debugger
     const [searchTerm, setSearchTerm] = useState('');
+    const history = useHistory();
 
     const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value);
+        const newSearchTerm = e.target.value;
+        setSearchTerm(newSearchTerm);
     };
 
-    return(
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        history.push(`/products/search/${searchTerm}`);
+    };
+
+    return (
         <>
             <div>
-                <input 
-                    type="text"
-                    placeholder="Search for anything"
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                    className="search-input"
-                />
-                <button className="search-button"><img src={magGlass} alt="magGlass" /></button>
+                <form onSubmit={handleSearchSubmit}>
+                    <input 
+                        type="text"
+                        placeholder="Search for anything"
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                        className="search-input"
+                        onKeyPress={(e) => { if (e.key === 'Enter') handleSearchSubmit(e); }}
+                    />
+                    <button type="submit" className="search-button"><img src={magGlass} alt="magGlass" /></button>
+                </form>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default SearchBar;

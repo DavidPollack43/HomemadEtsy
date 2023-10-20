@@ -5,12 +5,14 @@ import ProductIndex from "./components/ProductIndex";
 import ProductShow from "./components/ProductShow";
 import Cart from "./components/Cart";
 import ProductCategory from "./components/ProductCategory/productCategory";
+import SearchIndex from "./components/SearchIndex/searchIndex";
 
 function App() {
   return (
     <>
       <Navigation />
       <Switch>
+        <Route exact path = "/products/search/:search" component={SearchIndex}/>
         <Route exact path = "/" component={ProductIndex}/>
         <Route exact path = "/category/:categoryId" component={ProductCategory}/>
         <Route exact path = "/products/:productId" component={ProductShow}/>
