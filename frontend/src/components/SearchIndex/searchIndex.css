@@ -8,7 +8,7 @@
 }
 
 .product-search {
-    flex: 0 1 calc(22.5% - 1.5%);
+    /* flex: 0 1 calc(22.5% - 1.5%); */
     box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
     padding: 0;
     margin-bottom: 1.5%;
@@ -54,6 +54,7 @@
 }
 
 .products-container-search a {
+    flex: 0 1 calc(22.5% - 1.5%);
     text-decoration: none;
     color: inherit;
     display: block;
