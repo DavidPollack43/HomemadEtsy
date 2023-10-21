@@ -67,6 +67,10 @@ end
     render :index
   end
 ```
+
+Products Page:
+![Products](./indexSC.png)
+
 ##### Explanation
 The Jbuilder code is what is sent to the front end to be used as a data base for react componenets. 
 - The first step is seperating the @products into many products, and extracting the same data for each
@@ -173,6 +177,9 @@ export const cartReducer = (state = {}, action) => {
     }
 }
 ```
+Cart Screen Shot:
+
+![Cart](cartImageSC.png)
 ##### Explanation
 These are my thunk actions and reducer for my cart
 - The first thunk action will grab everything in the cart data base (if anything exists) from the backend.
