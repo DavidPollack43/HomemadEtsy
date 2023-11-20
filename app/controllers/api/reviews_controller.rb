@@ -1,4 +1,6 @@
 class Api::ReviewsController < ApplicationController
+    before_action :require_ownership, only: [:update, :destroy]
+
     def index
         @product = Product.find(params[:product_id])
         @reviews = @product.reviews
@@ -27,7 +29,6 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        @review = Review.find_by(id: params[:id])
         if @review && @review.update(review_params)
             render :show
         else
@@ -36,7 +37,6 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        @review = Review.find_by(id: params[:id])
         if @review && @review.destroy
             render json: ["Review deleted succesfully"]
         else
@@ -45,7 +45,15 @@ class Api::ReviewsController < ApplicationController
     end
 
     private
+
+    def require_ownership 
+        @review = Review.find_by(id: params[:id])
+        unless @review && @review.user == current_user.id
+          render json: { error: "You are not authorized to perform this action" }, status: :unauthorized
+        end
+    end
+
     def review_params 
-        params.require(:review).permit(:context, :rating)
+        params.require(:review).permit(:content, :rating)
     end
 end
