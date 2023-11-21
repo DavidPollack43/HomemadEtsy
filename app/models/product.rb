@@ -28,4 +28,8 @@ class Product < ApplicationRecord
 
     has_one_attached :photo
 
+    def average_rating
+        reviews.average(:rating).to_f.round(2)
+    end
+
 end
