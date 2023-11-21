@@ -150,5 +150,20 @@ end
 
 puts "#{products.length} products created!"
 
+puts "Seeding reviews ..."
+
+number_of_reviews = 120
+
+number_of_reviews.times do
+  Review.create!(
+    content: Faker::Lorem.sentence(word_count: 10),
+    rating: rand(1..5),
+    user: User.order('RANDOM()').first,
+    product: Product.order('RANDOM()').first
+  )
+end
+
+puts "#{number_of_reviews} reviews created!"
+
 
 puts "Done!"
