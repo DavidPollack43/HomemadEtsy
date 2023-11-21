@@ -99,3 +99,22 @@ export const deleteReview = (productId, reviewId) => async(dispatch) => {
         console.error("Error deleting review: ", error.message);
     }
 }
+
+export const reviewReducer = (state = {}, action) => {
+    const nextState = Object.assign({}, state);
+    
+    switch (action.type) {
+        case RECEIVE_REVIEWS:
+            return {...state, ...action.payload}
+        case RECEIVE_REVIEW:
+            nextState[action.payload.id] = action.payload;
+            return nextState;
+        case REMOVE_REVIEW:
+            delete nextState[action.payload]
+            return nextState;
+        default:
+            return state;
+    }
+}
+
+export default reviewReducer;
