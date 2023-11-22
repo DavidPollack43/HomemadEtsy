@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createReview } from '../../store/review';
+import "./ReviewForm.css"
 
 const ReviewForm = ({productId}) => {
     const dispatch = useDispatch();
@@ -21,8 +22,8 @@ const ReviewForm = ({productId}) => {
     }
     return (
         <>
-        <form onSubmit={handleSubmit}>
-            <label>
+        <form onSubmit={handleSubmit} className='form-create'>
+            <label className='rating-create'>
                 Rating:
                 <input
                     type='number'
@@ -33,11 +34,11 @@ const ReviewForm = ({productId}) => {
                     required
                     />
             </label>
-            <label>
+            <label className='review-create'>
                 Review:
-                <textarea value={content} onChange={(e) => setContent(e.target.value)}></textarea>
+                <textarea className='text-area-create' value={content} onChange={(e) => setContent(e.target.value)}></textarea>
             </label>
-            <button type='submit'>Submit Review</button>
+            <button className='create-button' type='submit'>Submit Review</button>
         </form>
         </>
     )

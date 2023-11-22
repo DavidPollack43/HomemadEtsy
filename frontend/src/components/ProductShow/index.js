@@ -114,7 +114,7 @@ export const ProductShow = () =>{
             )} 
             {addedToCart ? <p className='addedToCartWords'>Successfully added to cart!</p> : null}
             <div className='full-review-div'>
-                <h2 className='review-count'>{product.reviewsCount} reviews: </h2>
+                <h2 className='review-count'>Reviews: </h2>
                 <div className='all-review-div'>
                     {product.reviews.map(review => {
                         return(
