@@ -8,6 +8,7 @@ import "./index.css"
 import purpleIcon from './purpleIcon.svg'
 import checkMark from './checkMarkBlue.svg'
 import star from './icons8-star-48.png'
+import ReviewForm from '../ReviewForm/ReviewForm';
 
 export const ProductShow = () =>{
     const dispatch = useDispatch();
@@ -17,6 +18,7 @@ export const ProductShow = () =>{
     const existingCartItem = useSelector(state => getCartItemByProductId(state, productId));
     const [addedToCart, setAddedToCart] = useState(false);
     const sessionUser = useSelector(state => state.session.user);
+    const [showReviewForm, setShowReviewForm] = useState(false);
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
@@ -105,7 +107,13 @@ export const ProductShow = () =>{
                         );
                     })}
                 </div>
+                {sessionUser && (
+                    <button onClick={() => setShowReviewForm(!showReviewForm)} className='create-review-button'>
+                        Create a Review
+                    </button>
+                )}
             </div>
+            {showReviewForm && <ReviewForm productId={productId} />}
         </>
     ) : (
         null
