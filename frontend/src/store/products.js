@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 export const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
+export const UPDATE_PRODUCT = 'products/UPDATE_PRODUCT'
 
 export const receiveProducts = (payload) => {
     return {
@@ -16,6 +17,13 @@ export const receiveProduct = (payload) => {
         payload
     }
 }
+
+export const updateProduct = (product) => {
+    return {
+        type: UPDATE_PRODUCT,
+        product
+    };
+};
 
 export const getProducts = (state) => state.products ? Object.values(state.products) : [];
 
@@ -62,6 +70,11 @@ export const productReducer = (state = {}, action) => {
         case RECEIVE_PRODUCT:
             nextState[action.payload.id] = action.payload;
             return nextState;
+        case UPDATE_PRODUCT:
+            return {
+                ...state,
+                [action.product.id]: action.product
+            };
         default:
             return state;
     }

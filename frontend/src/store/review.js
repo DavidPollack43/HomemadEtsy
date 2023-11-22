@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf";
+import { updateProduct } from "./products";
 
 export const RECEIVE_REVIEWS = 'reviews/RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW';
@@ -51,22 +52,29 @@ export const fetchReview = (productId, reviewId) => async(dispatch) => {
     }
 }
 
-export const createReview = (productId, review) => async(dispatch) => {
+export const createReview = (productId, review) => async (dispatch) => {
     const res = await csrfFetch(`/api/products/${productId}/reviews`, {
         method: "POST", 
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(review)
-    })
-    if(res.ok){
-        const data = await res.json();
-        dispatch(receiveReview(data));
+    });
+
+    if (res.ok) {
+        const newReview = await res.json();
+        dispatch(receiveReview(newReview));
+
+        const productRes = await fetch(`/api/products/${productId}`);
+        if (productRes.ok) {
+            const updatedProduct = await productRes.json();
+            dispatch(updateProduct(updatedProduct));
+        }
     } else {
         const error = await res.json();
         console.error("Error creating review: ", error.message);
     }
-}
+};
 
 export const updateReview = (productId, reviewId, review) => async(dispatch) => {
     const res = await csrfFetch(`/api/products/${productId}/reviews/${reviewId}`, {
