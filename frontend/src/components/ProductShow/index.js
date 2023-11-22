@@ -7,7 +7,7 @@ import { useState } from 'react';
 import "./index.css"
 import purpleIcon from './purpleIcon.svg'
 import checkMark from './checkMarkBlue.svg'
-import LoginFormModal from '../LoginFormModal';
+import star from './icons8-star-48.png'
 
 export const ProductShow = () =>{
     const dispatch = useDispatch();
@@ -64,6 +64,10 @@ export const ProductShow = () =>{
             <div className='sellerDiv'>
                 <p className='seller'>{product.user.username}</p>
                 <img src={purpleIcon} className='purple' alt="icon" />
+            </div>
+            <div className='review-div-show'>
+                <img src={star} className='star-show'/>
+                <p>{product.averageRating}</p>
             </div>
             <img src={checkMark} alt="checkMark" className='checkMark' />
             <p className='returns'>Returns & exchanges accepted</p>
