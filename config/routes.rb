@@ -12,7 +12,8 @@ Rails.application.routes.draw do
       resource :session, only: [:create, :destroy, :show] # Log in and Log out
 
       # Product routes
-      resources :products, except: [:new, :edit] do 
+      resources :products, except: [:new, :edit] do
+        resources :reviews, only: [:index, :create, :show, :update, :destroy]
       end
 
       # Order routes

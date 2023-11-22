@@ -24,6 +24,16 @@ class Product < ApplicationRecord
 
     has_many :order_items, dependent: :destroy
 
+    has_many :reviews
+
     has_one_attached :photo
+
+    def average_rating
+        reviews.average(:rating).to_f.round(2)
+    end
+
+    def reviews_count
+        reviews.count
+    end
 
 end

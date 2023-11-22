@@ -1,0 +1,60 @@
+.form-update{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 30vw;
+    border-radius: 0%;
+}
+
+.rating-update{
+    color: white;
+    font-size: medium;
+}
+
+.review-update{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1vh;
+    font-size: medium;
+    margin-left: 2vw;
+}
+
+.save-update-button{
+    background-color: #292828;
+    color: #FFF;
+    border: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 10vw;
+    height: 8vh;
+    margin-left: 2vw;
+}
+
+.cancel-update-button{
+    background-color: #292828;
+    color: #FFF;
+    border: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 10vw;
+    height: 8vh;
+    margin-left: 2vw;
+}
+
+.save-update-button:hover{
+    background-color: #999999;
+}
+
+.cancel-update-button:hover{
+    background-color: #999999;
+}

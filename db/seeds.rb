@@ -150,5 +150,22 @@ end
 
 puts "#{products.length} products created!"
 
+puts "Seeding reviews ..."
+
+products = Product.all
+
+products.each do |product|
+  2.times do # Creating two reviews for each product
+    Review.create!(
+      content: Faker::Lorem.sentence(word_count: 10),
+      rating: rand(1..5),
+      user: User.order('RANDOM()').first, # Random user for each review
+      product: product # Current product in the loop
+    )
+  end
+end
+
+total_reviews_created = products.count * 2
+puts "#{total_reviews_created} reviews created!"
 
 puts "Done!"

@@ -7,24 +7,43 @@ import { useState } from 'react';
 import "./index.css"
 import purpleIcon from './purpleIcon.svg'
 import checkMark from './checkMarkBlue.svg'
-import LoginFormModal from '../LoginFormModal';
+import star from './icons8-star-48.png'
+import ReviewForm from '../ReviewForm/ReviewForm';
+import UpdateReviewForm from '../UpdateReviewForm/UpdateReviewForm';
+import { deleteReview } from '../../store/review';
 
 export const ProductShow = () =>{
     const dispatch = useDispatch();
     const {productId} = useParams();
-    const product = useSelector(getProduct(productId));
+    // const product = useSelector(getProduct(productId));
+    const reduxProduct = useSelector(getProduct(productId));
+    const [product, setProduct] = useState(reduxProduct);
     const [quantityForCart, setQuantityForCart] = useState(1)
     const existingCartItem = useSelector(state => getCartItemByProductId(state, productId));
     const [addedToCart, setAddedToCart] = useState(false);
     const sessionUser = useSelector(state => state.session.user);
+    const [showReviewForm, setShowReviewForm] = useState(false);
+    const [editingReviewId, setEditingReviewId] = useState(null);
 
     useEffect(() => {
-        dispatch(fetchProduct(productId));
-    }, [productId])
+        if (productId) {
+            dispatch(fetchProduct(productId));
+        }
+    }, [productId, dispatch]);
+
+    useEffect(() => {
+        setProduct(reduxProduct);
+    }, [reduxProduct]);
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
     }, [])
+
+    // useEffect(() => {
+    //     if (productId) {
+    //         dispatch(fetchProduct(productId));
+    //     }
+    // }, [productId, dispatch]);
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -47,6 +66,15 @@ export const ProductShow = () =>{
         setQuantityForCart(e.target.value)
     }
 
+    const handleDelete = (review) => {
+        console.log("Delete button pressed")
+        dispatch(deleteReview(review.productId, review.id));
+        const updatedReviews = product.reviews.filter(r => r.id !== review.id);
+        setProduct({ ...product, reviews: updatedReviews });
+    }
+
+    console.log("product: ", product);
+
     return (product) ? 
     (
         <>
@@ -65,6 +93,10 @@ export const ProductShow = () =>{
                 <p className='seller'>{product.user.username}</p>
                 <img src={purpleIcon} className='purple' alt="icon" />
             </div>
+            <div className='review-div-show'>
+                <img src={star} className='star-show'/>
+                <p>{product.averageRating}</p>
+            </div>
             <img src={checkMark} alt="checkMark" className='checkMark' />
             <p className='returns'>Returns & exchanges accepted</p>
             <p className='description'>{product.description}</p>
@@ -81,6 +113,45 @@ export const ProductShow = () =>{
                <button className='pleaseLogin'>Please login to add to cart</button>
             )} 
             {addedToCart ? <p className='addedToCartWords'>Successfully added to cart!</p> : null}
+            <div className='full-review-div'>
+                <h2 className='review-count'>Reviews: </h2>
+                <div className='all-review-div'>
+                    {product.reviews.map(review => {
+                        return(
+                            <div className='single-review-div'>
+                                <div className='review-star-rating-div'>
+                                    <img src={star} className='star-review'/>
+                                    <p className='single-review-rating'>{review.rating}</p>
+                                </div>
+                                {editingReviewId === review.id ? (
+                                    <UpdateReviewForm productId={productId} review={review} onCancel={() => setEditingReviewId(null)} />
+                                ) : (
+                                <div>
+                                    <p>{review.content}</p>
+                                    <p className='review-user'>By: {review.user.username}</p>
+                                    {sessionUser && sessionUser.id === review.user.id && (
+                                            <button className='trigger-update-button' onClick={() => setEditingReviewId(review.id)}>Update</button>
+                                    )}
+                                    {sessionUser && sessionUser.id === review.user.id && (
+                                        <button className='trigger-delete-button' onClick={() => handleDelete(review)}>Delete Review</button>
+                                    )}
+                                </div>
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
+                {sessionUser && (
+                    <button onClick={() => setShowReviewForm(!showReviewForm)} className='create-review-button'>
+                        Create a Review
+                    </button>
+                )}
+            {showReviewForm && (
+                <div id='review-form'>
+                    <ReviewForm productId={productId}/>
+                </div>
+            )}
+            </div>
         </>
     ) : (
         null
