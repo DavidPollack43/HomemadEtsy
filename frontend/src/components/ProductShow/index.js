@@ -130,10 +130,10 @@ export const ProductShow = () =>{
                                     <p>{review.content}</p>
                                     <p className='review-user'>By: {review.user.username}</p>
                                     {sessionUser && sessionUser.id === review.user.id && (
-                                            <button onClick={() => setEditingReviewId(review.id)}>Update</button>
+                                            <button className='trigger-update-button' onClick={() => setEditingReviewId(review.id)}>Update</button>
                                     )}
                                     {sessionUser && sessionUser.id === review.user.id && (
-                                        <button onClick={() => handleDelete(review)}>Delete Review</button>
+                                        <button className='trigger-delete-button' onClick={() => handleDelete(review)}>Delete Review</button>
                                     )}
                                 </div>
                                 )}

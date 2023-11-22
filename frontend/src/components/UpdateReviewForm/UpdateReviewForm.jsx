@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { updateReview } from "../../store/review";
 import { useState } from "react";
+import './UpdateReviewForm.css'
 
 const UpdateReviewForm = ({productId,review, onCancel}) => {
     const [content, setContent] = useState(review.content);
@@ -22,8 +23,8 @@ const UpdateReviewForm = ({productId,review, onCancel}) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>
+            <form onSubmit={handleSubmit} className="form-update">
+                <label className="rating-update">
                     Rating:
                     <input
                         type="number"
@@ -34,15 +35,15 @@ const UpdateReviewForm = ({productId,review, onCancel}) => {
                         required
                     />
                 </label>
-                <label>
+                <label className="review-update">
                     Review:
                     <textarea
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                     />
                 </label>
-                <button type="submit">Save Changes</button>
-                <button type="button" onClick={onCancel}>Cancel</button>
+                <button className="save-update-button" type="submit">Save Changes</button>
+                <button className="cancel-update-button" type="button" onClick={onCancel}>Cancel</button>
             </form>
         </>
     )

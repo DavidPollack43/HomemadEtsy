@@ -1,6 +1,7 @@
 .review-create{
     color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 1vh;
     font-size: medium;
