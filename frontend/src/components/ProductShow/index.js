@@ -47,6 +47,8 @@ export const ProductShow = () =>{
         setQuantityForCart(e.target.value)
     }
 
+    console.log("product: ", product);
+
     return (product) ? 
     (
         <>
@@ -85,6 +87,24 @@ export const ProductShow = () =>{
                <button className='pleaseLogin'>Please login to add to cart</button>
             )} 
             {addedToCart ? <p className='addedToCartWords'>Successfully added to cart!</p> : null}
+            <div className='full-review-div'>
+                <h2 className='review-count'>{product.reviewsCount} reviews: </h2>
+                <div className='all-review-div'>
+                    {product.reviews.map(review => {
+                        return(
+                            <div className='single-review-div'>
+                                <div className='review-star-rating-div'>
+                                    <img src={star} className='star-review'/>
+                                    <p className='single-review-rating'>{review.rating}</p>
+                                </div>
+                                <div>
+                                    <p>{review.content}</p>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
         </>
     ) : (
         null

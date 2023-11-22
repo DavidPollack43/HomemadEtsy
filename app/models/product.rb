@@ -32,4 +32,8 @@ class Product < ApplicationRecord
         reviews.average(:rating).to_f.round(2)
     end
 
+    def reviews_count
+        reviews.count
+    end
+
 end
