@@ -9,6 +9,7 @@ import purpleIcon from './purpleIcon.svg'
 import checkMark from './checkMarkBlue.svg'
 import star from './icons8-star-48.png'
 import ReviewForm from '../ReviewForm/ReviewForm';
+import UpdateReviewForm from '../UpdateReviewForm/UpdateReviewForm';
 
 export const ProductShow = () =>{
     const dispatch = useDispatch();
@@ -19,6 +20,7 @@ export const ProductShow = () =>{
     const [addedToCart, setAddedToCart] = useState(false);
     const sessionUser = useSelector(state => state.session.user);
     const [showReviewForm, setShowReviewForm] = useState(false);
+    const [editingReviewId, setEditingReviewId] = useState(null);
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
@@ -99,10 +101,17 @@ export const ProductShow = () =>{
                                     <img src={star} className='star-review'/>
                                     <p className='single-review-rating'>{review.rating}</p>
                                 </div>
+                                {editingReviewId === review.id ? (
+                                    <UpdateReviewForm productId={productId} review={review} onCancel={() => setEditingReviewId(null)} />
+                                ) : (
                                 <div>
                                     <p>{review.content}</p>
                                     <p className='review-user'>By: {review.user.username}</p>
+                                    {sessionUser && sessionUser.id === review.user.id && (
+                                            <button onClick={() => setEditingReviewId(review.id)}>Update</button>
+                                    )}
                                 </div>
+                                )}
                             </div>
                         );
                     })}

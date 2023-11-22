@@ -30,10 +30,17 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        if @review && @review.update(review_params)
+        @review = Review.find(params[:id])
+
+        if @review.user != current_user
+            render json: { error: 'You are not authorized to edit this review' }, status: :unauthorized
+            return
+        end
+      
+        if @review.update(review_params)
             render :show
         else
-            render json: @review.errors.full_messages, status: 422
+            render json: @review.errors.full_messages, status: :unprocessable_entity
         end
     end
 
@@ -47,9 +54,9 @@ class Api::ReviewsController < ApplicationController
 
     private
 
-    def require_ownership 
+    def require_ownership
         @review = Review.find_by(id: params[:id])
-        unless @review && @review.user == current_user.id
+        unless @review && @review.user == current_user
           render json: { error: "You are not authorized to perform this action" }, status: :unauthorized
         end
     end

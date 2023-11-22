@@ -87,6 +87,12 @@ export const updateReview = (productId, reviewId, review) => async(dispatch) => 
     if(res.ok){
         const data = await res.json();
         dispatch(receiveReview(data))
+
+        const productRes = await fetch(`/api/products/${productId}`);
+        if (productRes.ok) {
+            const updatedProduct = await productRes.json();
+            dispatch(updateProduct(updatedProduct));
+        }    
     } else {
         const error = await res.json();
         console.error("Error updating review: ", error.message);
