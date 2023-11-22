@@ -112,8 +112,12 @@ export const ProductShow = () =>{
                         Create a Review
                     </button>
                 )}
+            {showReviewForm && (
+                <div id='review-form'>
+                    <ReviewForm productId={productId}/>
+                </div>
+            )}
             </div>
-            {showReviewForm && <ReviewForm productId={productId}/>}
         </>
     ) : (
         null

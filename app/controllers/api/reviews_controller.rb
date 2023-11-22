@@ -11,11 +11,12 @@ class Api::ReviewsController < ApplicationController
         @product = Product.find(params[:product_id])
         @review = @product.reviews.new(review_params)
         @review.user = current_user
-
+    
         if @review.save
             render :show
         else
-            render json: @review.errors.full_messages, status: 422
+            Rails.logger.info @review.errors.full_messages.to_sentence
+            render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
         end
     end
 

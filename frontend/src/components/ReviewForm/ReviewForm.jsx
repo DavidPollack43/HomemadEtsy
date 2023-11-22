@@ -9,7 +9,12 @@ const ReviewForm = ({productId}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const review = { rating, content};
+        const review = {
+            review: {
+                rating: parseInt(rating, 10),
+                content: content
+            }
+        };
         dispatch(createReview(productId, review))
         setRating('');
         setContent('');
