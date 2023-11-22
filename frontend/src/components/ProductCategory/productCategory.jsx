@@ -27,7 +27,7 @@ export const ProductCategory = () => {
                     <Link to={`/products/${product.id}`} key={product.id}>
                         <div key={product.id} className="product">
                             <div className="productPictureDiv">
-                                <img src={product.photoUrl} alt="productPicture" />
+                                <img src={product.photoUrl} alt="productPicture" className="productPicIndex"/>
                             </div>
                             <h2 className="productTitle">{product.title}</h2>
                             <p className="productCost">${product.price}</p>

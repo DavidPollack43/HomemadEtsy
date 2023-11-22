@@ -14,6 +14,7 @@
         end
         json.reviews product.reviews do |review|
             json.extract! review, :id, :rating, :content
+            json.user review.user, :id, :username
         end
     end
 end

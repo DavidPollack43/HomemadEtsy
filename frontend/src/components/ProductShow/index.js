@@ -99,6 +99,7 @@ export const ProductShow = () =>{
                                 </div>
                                 <div>
                                     <p>{review.content}</p>
+                                    <p className='review-user'>By: {review.user.username}</p>
                                 </div>
                             </div>
                         );
