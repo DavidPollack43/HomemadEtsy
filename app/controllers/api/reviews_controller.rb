@@ -45,10 +45,17 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
+        @review = Review.find(params[:id])
+
+        if @review.user != current_user
+            render json: { error: 'You are not authorized to delete this review' }, status: :unauthorized
+            return
+        end
+
         if @review && @review.destroy
-            render json: ["Review deleted succesfully"]
+            render json: { message: 'Review deleted successfully' }
         else
-            render json: ["Review could not be deleted"], status: 422
+            render json: { error: 'Review could not be deleted' }, status: :unprocessable_entity
         end
     end
 

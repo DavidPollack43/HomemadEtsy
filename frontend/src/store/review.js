@@ -108,6 +108,11 @@ export const deleteReview = (productId, reviewId) => async(dispatch) => {
     })
     if(res.ok){
         dispatch(removeReview(reviewId));
+        const productRes = await fetch(`/api/products/${productId}`);
+        if (productRes.ok) {
+            const updatedProduct = await productRes.json();
+            dispatch(updateProduct(updatedProduct)); 
+        }
     } else{
         const error = await res.json();
         console.error("Error deleting review: ", error.message);

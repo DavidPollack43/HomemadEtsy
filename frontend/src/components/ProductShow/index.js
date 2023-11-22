@@ -10,11 +10,14 @@ import checkMark from './checkMarkBlue.svg'
 import star from './icons8-star-48.png'
 import ReviewForm from '../ReviewForm/ReviewForm';
 import UpdateReviewForm from '../UpdateReviewForm/UpdateReviewForm';
+import { deleteReview } from '../../store/review';
 
 export const ProductShow = () =>{
     const dispatch = useDispatch();
     const {productId} = useParams();
-    const product = useSelector(getProduct(productId));
+    // const product = useSelector(getProduct(productId));
+    const reduxProduct = useSelector(getProduct(productId));
+    const [product, setProduct] = useState(reduxProduct);
     const [quantityForCart, setQuantityForCart] = useState(1)
     const existingCartItem = useSelector(state => getCartItemByProductId(state, productId));
     const [addedToCart, setAddedToCart] = useState(false);
@@ -23,12 +26,24 @@ export const ProductShow = () =>{
     const [editingReviewId, setEditingReviewId] = useState(null);
 
     useEffect(() => {
-        dispatch(fetchProduct(productId));
-    }, [productId])
+        if (productId) {
+            dispatch(fetchProduct(productId));
+        }
+    }, [productId, dispatch]);
+
+    useEffect(() => {
+        setProduct(reduxProduct);
+    }, [reduxProduct]);
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
     }, [])
+
+    // useEffect(() => {
+    //     if (productId) {
+    //         dispatch(fetchProduct(productId));
+    //     }
+    // }, [productId, dispatch]);
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -49,6 +64,13 @@ export const ProductShow = () =>{
     const setQuantity = (e) => {
         e.preventDefault();
         setQuantityForCart(e.target.value)
+    }
+
+    const handleDelete = (review) => {
+        console.log("Delete button pressed")
+        dispatch(deleteReview(review.productId, review.id));
+        const updatedReviews = product.reviews.filter(r => r.id !== review.id);
+        setProduct({ ...product, reviews: updatedReviews });
     }
 
     console.log("product: ", product);
@@ -109,6 +131,9 @@ export const ProductShow = () =>{
                                     <p className='review-user'>By: {review.user.username}</p>
                                     {sessionUser && sessionUser.id === review.user.id && (
                                             <button onClick={() => setEditingReviewId(review.id)}>Update</button>
+                                    )}
+                                    {sessionUser && sessionUser.id === review.user.id && (
+                                        <button onClick={() => handleDelete(review)}>Delete Review</button>
                                     )}
                                 </div>
                                 )}
