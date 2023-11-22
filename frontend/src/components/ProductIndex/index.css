@@ -22,7 +22,7 @@
     margin-bottom: 1.5%;
 }
 
-.product img{
+.productPicIndex{
     width: 100%;
     height: 100%;
     object-fit: fill;
@@ -88,4 +88,17 @@
     color: #999999;
     font-size: x-large;
     font-weight: bolder;
+}
+
+.review-index{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: .5vh;
+}
+
+.star-index{
+    height: 1.5vh;
+    width: 1vw;
 }
