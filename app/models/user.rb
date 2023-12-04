@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
   has_many :orders, dependent: :destroy
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   has_secure_password # this handles password getter, setter, and is_password? for us
 
