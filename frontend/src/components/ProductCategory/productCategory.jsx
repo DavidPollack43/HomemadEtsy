@@ -30,7 +30,7 @@ export const ProductCategory = () => {
                                 <img src={product.photoUrl} alt="productPicture" className="productPicIndex"/>
                             </div>
                             <h2 className="productTitle">{product.title}</h2>
-                            <p className="productCost">${product.price}</p>
+                            <p className="productCost">${product.price}0</p>
                             <p className="productSeller">{product.user.username}</p>
                             <br/>
                         </div>

@@ -87,7 +87,7 @@ export const ProductShow = () =>{
             <br/>
 
             <p className='demand'>In demand. Buy now while supplies last! Only {product.stockQuantity} left!</p>
-            <p className='price'>${product.price}</p>
+            <p className='price'>${product.price}0</p>
             <p className='title'>{product.title}</p>
             <div className='sellerDiv'>
                 <p className='seller'>{product.user.username}</p>

@@ -31,7 +31,7 @@ export const ProductIndex = (props) => {
                                 <img src={star} className="star-index"/>
                                 <p className="review-num-index">{product.averageRating}</p>
                             </div>
-                            <p className="productCost">${product.price}</p>
+                            <p className="productCost">${product.price}0</p>
                             <p className="productSeller">{product.user.username}</p>
                             <br/>
                         </div>
